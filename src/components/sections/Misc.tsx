@@ -79,7 +79,6 @@ export function About() {
         >
           <div className="aspect-[4/5] rounded-3xl overflow-hidden relative shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] ring-1 ring-white/20">
             <div className="absolute inset-0 z-20 mix-blend-screen pointer-events-auto">
-              <ThreeGlobe />
             </div>
             <div className="absolute inset-0 z-30 grid place-items-center pointer-events-none">
               <img
