@@ -88,12 +88,12 @@ export function ContactModal() {
                 e.preventDefault();
                 setIsSubmitting(true);
                 const f = new FormData(e.currentTarget);
-                
+
                 fetch("https://formsubmit.co/ajax/sales@TERAiTtech.com", {
                   method: "POST",
-                  headers: { 
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
+                  headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
                   },
                   body: JSON.stringify({
                     name: f.get("name"),
@@ -101,21 +101,21 @@ export function ContactModal() {
                     phone: f.get("phone"),
                     message: f.get("message"),
                     _subject: "New Website Enquiry - TERAiT",
-                    _template: "table"
+                    _template: "table",
+                  }),
+                })
+                  .then((response) => response.json())
+                  .then((data) => {
+                    setIsSubmitting(false);
+                    setIsSuccess(true);
+                    setTimeout(() => {
+                      setOpen(false);
+                    }, 3000);
                   })
-                })
-                .then(response => response.json())
-                .then(data => {
-                  setIsSubmitting(false);
-                  setIsSuccess(true);
-                  setTimeout(() => {
-                    setOpen(false);
-                  }, 3000);
-                })
-                .catch(error => {
-                  setIsSubmitting(false);
-                  alert("Failed to send message. Please try again or email us directly.");
-                });
+                  .catch((error) => {
+                    setIsSubmitting(false);
+                    alert("Failed to send message. Please try again or email us directly.");
+                  });
               }}
               className="bg-white/80 dark:bg-black/20 border border-black/5 dark:border-white/10 rounded-2xl p-6 space-y-4 relative"
             >

@@ -215,50 +215,26 @@ export function VideoBackground() {
 
   let videoSrc = "/background-video.mp4";
   if (isAltVideo) videoSrc = "/terait-loop-1080p-fast.mp4";
-  if (isAboutPage) videoSrc = teraitBgVideo;
+
+  if (isAboutPage) {
+    return (
+      <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden z-0 bg-black">
+        <video
+          key="/terait-bg-1080p-16x9.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover z-10 opacity-100"
+        >
+          <source src="/terait-bg-1080p-16x9.mp4" type="video/mp4" />
+        </video>
+      </div>
+    );
+  }
 
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden z-0">
-      {/* Gentle Animated Globs synchronized across pages */}
-      <div className="absolute inset-0 pointer-events-none opacity-30 z-20 mix-blend-multiply">
-        <motion.div
-          animate={{
-            scale: [1, 1.1, 1],
-            x: ["-10%", "5%", "-10%"],
-            y: ["-5%", "10%", "-5%"]
-          }}
-          transition={{ duration: 20, ease: "easeInOut", repeat: Infinity }}
-          className="absolute top-0 left-0 h-[800px] w-[800px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(253,224,71,0.4) 0%, transparent 70%)" }}
-        />
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            x: ["10%", "-5%", "10%"],
-            y: ["10%", "-5%", "10%"]
-          }}
-          transition={{ duration: 25, ease: "easeInOut", repeat: Infinity }}
-          className="absolute top-1/4 right-0 h-[900px] w-[900px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(244,114,182,0.4) 0%, transparent 70%)" }}
-        />
-        <motion.div
-          animate={{
-            scale: [1.1, 1, 1.1],
-            x: ["0%", "-10%", "0%"],
-            y: ["10%", "-5%", "10%"]
-          }}
-          transition={{ duration: 22, ease: "easeInOut", repeat: Infinity }}
-          className="absolute bottom-0 left-1/3 h-[700px] w-[1000px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(56,189,248,0.4) 0%, transparent 70%)" }}
-        />
-        <motion.div
-          animate={{ scale: [1, 1.05, 1] }}
-          transition={{ duration: 15, ease: "easeInOut", repeat: Infinity }}
-          className="absolute inset-0 z-0 pointer-events-none opacity-80"
-        >
-          <ThreeGlobe />
-        </motion.div>
-      </div>
       <video
         key={videoSrc}
         autoPlay
@@ -269,20 +245,7 @@ export function VideoBackground() {
       >
         <source src={videoSrc} type="video/mp4" />
       </video>
-      <div
-        className="absolute inset-0 z-20"
-        style={{
-          background:
-            "radial-gradient(ellipse at center, rgba(255,255,255,0.2) 0%, rgba(240,245,255,0.7) 100%)",
-        }}
-      />
-      <div
-        className="absolute inset-0 z-20 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")",
-        }}
-      />
+      <div className="absolute inset-0 z-20 bg-white/5" />
 
       {/* Interactive Neural Network Particles */}
       <NetworkParticles />

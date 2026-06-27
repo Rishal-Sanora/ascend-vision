@@ -135,21 +135,23 @@ export function Products() {
                       "radial-gradient(circle at top right, color-mix(in srgb, var(--brand-red) 15%, transparent), transparent 70%)",
                   }}
                 />
-                <div className="relative">
+                <div className="relative font-bold">
                   <div className="text-3xl">{c.icon}</div>
-                  <h3 className="mt-3 font-display font-semibold text-lg leading-snug">{c.name}</h3>
-                  <p className="mt-2 text-xs text-foreground/65 leading-relaxed">{c.items}</p>
+                  <h3 className="mt-3 font-display font-bold text-lg leading-snug">{c.name}</h3>
+                  <p className="mt-2 text-xs font-bold text-foreground/65 leading-relaxed">
+                    {c.items}
+                  </p>
                   <div className="mt-4 flex flex-wrap gap-1.5">
                     {c.brands.slice(0, 3).map((b) => (
                       <span
                         key={b}
-                        className="text-[10px] uppercase tracking-wider px-2 py-1 rounded-full bg-white/5 border border-white/10"
+                        className="font-bold text-[10px] uppercase tracking-wider px-2 py-1 rounded-full bg-white/5 border border-white/10"
                       >
                         {b}
                       </span>
                     ))}
                     {c.brands.length > 3 && (
-                      <span className="text-[10px] uppercase tracking-wider px-2 py-1 rounded-full bg-white/5 border border-white/10">
+                      <span className="font-bold text-[10px] uppercase tracking-wider px-2 py-1 rounded-full bg-white/5 border border-white/10">
                         +{c.brands.length - 3}
                       </span>
                     )}

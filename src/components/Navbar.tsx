@@ -37,17 +37,17 @@ export function Navbar() {
         }`}
       >
         <div className="container-x">
-          <div
-            className={`flex items-center justify-between rounded-full px-4 md:px-6 py-3 transition-all duration-500 ${
-              scrolled
-                ? "glass-strong shadow-[0_10px_40px_-20px_rgba(0,0,0,0.6)]"
-                : "bg-transparent"
-            }`}
-          >
+          <div className="flex items-center justify-between w-full py-3">
             <Link to="/" className="flex items-center" aria-label="TERAiT home">
               <Wordmark />
             </Link>
-            <nav className="hidden md:flex items-center gap-1">
+            <nav
+              className={`hidden md:flex items-center gap-1 transition-all duration-500 ${
+                scrolled
+                  ? "glass-strong rounded-full px-4 py-1.5 shadow-[0_10px_40px_-20px_rgba(0,0,0,0.6)] border border-white/20"
+                  : ""
+              }`}
+            >
               {links.map((l) => (
                 <Link
                   key={l.to}
@@ -80,7 +80,9 @@ export function Navbar() {
             <button
               aria-label={open ? "Close menu" : "Open menu"}
               onClick={() => setOpen(!open)}
-              className="md:hidden flex flex-col gap-1.5 p-2"
+              className={`md:hidden flex flex-col gap-1.5 p-3 rounded-full transition-all duration-500 ${
+                scrolled ? "glass-strong border border-white/20" : ""
+              }`}
             >
               <span
                 className={`h-0.5 w-6 bg-foreground transition-all ${open ? "translate-y-2 rotate-45" : ""}`}

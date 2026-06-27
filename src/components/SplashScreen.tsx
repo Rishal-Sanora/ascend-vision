@@ -27,47 +27,52 @@ export function SplashScreen({ onComplete }: { onComplete: () => void }) {
             scale: [1, 1.2, 1],
             rotate: [0, 90, 0],
             x: ["-20%", "10%", "-20%"],
-            y: ["-10%", "20%", "-10%"]
+            y: ["-10%", "20%", "-10%"],
           }}
           transition={{ duration: 10, ease: "easeInOut", repeat: Infinity }}
           className="absolute top-1/4 left-1/4 h-[700px] w-[700px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(253,224,71,0.5) 0%, transparent 70%)" }}
+          style={{
+            background: "radial-gradient(circle, rgba(253,224,71,0.5) 0%, transparent 70%)",
+          }}
         />
         <motion.div
           animate={{
             scale: [1, 1.3, 1],
             rotate: [0, -90, 0],
             x: ["20%", "-10%", "20%"],
-            y: ["20%", "-10%", "20%"]
+            y: ["20%", "-10%", "20%"],
           }}
           transition={{ duration: 12, ease: "easeInOut", repeat: Infinity }}
           className="absolute top-1/3 right-1/4 h-[800px] w-[800px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(244,114,182,0.5) 0%, transparent 70%)" }}
+          style={{
+            background: "radial-gradient(circle, rgba(244,114,182,0.5) 0%, transparent 70%)",
+          }}
         />
         <motion.div
           animate={{
             scale: [1.2, 1, 1.2],
             x: ["0%", "0%", "0%"],
-            y: ["10%", "-10%", "10%"]
+            y: ["10%", "-10%", "10%"],
           }}
           transition={{ duration: 8, ease: "easeInOut", repeat: Infinity }}
           className="absolute bottom-1/4 left-1/2 -translate-x-1/2 h-[600px] w-[900px] rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(56,189,248,0.5) 0%, transparent 70%)" }}
+          style={{
+            background: "radial-gradient(circle, rgba(56,189,248,0.5) 0%, transparent 70%)",
+          }}
         />
       </div>
 
       {/* Grid overlay for texture */}
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
-          backgroundImage: "linear-gradient(rgba(0,0,0,1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,1) 1px, transparent 1px)",
-          backgroundSize: "40px 40px"
+          backgroundImage:
+            "linear-gradient(rgba(0,0,0,1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,1) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
         }}
       />
 
-
-
-      <motion.div 
+      <motion.div
         initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1.8, ease: "easeOut" }}
@@ -94,7 +99,7 @@ export function SplashScreen({ onComplete }: { onComplete: () => void }) {
         </motion.div>
 
         {/* GPU-accelerated loading bar */}
-        <div 
+        <div
           className="w-[220px] h-[4px] mt-12 rounded-full overflow-hidden relative shadow-[0_0_20px_rgba(236,72,153,0.4)]"
           style={{ background: "rgba(0,0,0,0.05)" }}
         >
@@ -104,7 +109,7 @@ export function SplashScreen({ onComplete }: { onComplete: () => void }) {
             transition={{ duration: 1.5, delay: 1, ease: "easeOut" }}
             className="absolute inset-0 w-full h-full origin-left"
             style={{
-              background: "linear-gradient(90deg, #38bdf8, #f472b6, #fde047)"
+              background: "linear-gradient(90deg, #38bdf8, #f472b6, #fde047)",
             }}
           />
         </div>

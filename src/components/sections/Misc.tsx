@@ -79,17 +79,10 @@ export function About() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="aspect-[4/5] rounded-3xl overflow-hidden relative shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] ring-1 ring-white/20">
-            <div
-              className="absolute inset-0 opacity-80"
-              style={{
-                background:
-                  "conic-gradient(from 220deg at 70% 30%, var(--brand-red)33, transparent 30%, var(--brand-blue)55 60%, transparent)",
-              }}
-            />
-            <div className="absolute inset-0 z-10 mix-blend-screen pointer-events-auto">
+            <div className="absolute inset-0 z-20 mix-blend-screen pointer-events-auto">
               <ThreeGlobe />
             </div>
-            <div className="absolute inset-0 z-20 grid place-items-center pointer-events-none">
+            <div className="absolute inset-0 z-30 grid place-items-center pointer-events-none">
               <img
                 src="/1newface-removebg-preview.png"
                 alt=""
@@ -225,9 +218,7 @@ export function WhyUs() {
             >
               <div className="text-3xl drop-shadow-sm">{r.i}</div>
               <div className="mt-3 font-display font-semibold text-lg">{r.t}</div>
-              <div className="mt-2 text-sm text-black leading-relaxed font-semibold">
-                {r.d}
-              </div>
+              <div className="mt-2 text-sm text-black leading-relaxed font-semibold">{r.d}</div>
             </motion.div>
           ))}
         </div>
@@ -381,10 +372,7 @@ export function Testimonials() {
   return (
     <section className="relative py-24 md:py-32">
       <div className="container-x">
-        <SectionHeader
-          kicker="Loved by clients"
-          title="Real outcomes, real teams"
-        />
+        <SectionHeader kicker="Loved by clients" title="Real outcomes, real teams" />
         <div className="grid md:grid-cols-3 gap-5">
           {data.map((t, i) => (
             <motion.div
@@ -463,7 +451,9 @@ export function FAQ() {
                 animate={{ height: open === i ? "auto" : 0, opacity: open === i ? 1 : 0 }}
                 className="overflow-hidden"
               >
-                <div className="px-5 md:px-6 pb-6 text-black font-medium leading-relaxed">{it.a}</div>
+                <div className="px-5 md:px-6 pb-6 text-black font-medium leading-relaxed">
+                  {it.a}
+                </div>
               </motion.div>
             </div>
           ))}
@@ -477,7 +467,7 @@ export function FAQ() {
 export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  
+
   return (
     <section id="contact" className="relative py-24 md:py-32">
       <div className="container-x max-w-5xl">
@@ -524,6 +514,7 @@ export function Contact() {
                   </a>
                 }
               />
+              <ContactRow icon="🕒" label="Working Hours" value="9:30 am to 6:30 pm" />
 
               <div className="mt-8 rounded-xl overflow-hidden h-[250px] border border-black/10">
                 <iframe
@@ -543,12 +534,12 @@ export function Contact() {
                 e.preventDefault();
                 setIsSubmitting(true);
                 const f = new FormData(e.currentTarget);
-                
+
                 fetch("https://formsubmit.co/ajax/sales@TERAiTtech.com", {
                   method: "POST",
-                  headers: { 
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
+                  headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
                   },
                   body: JSON.stringify({
                     name: f.get("name"),
@@ -556,23 +547,23 @@ export function Contact() {
                     phone: f.get("phone"),
                     message: f.get("message"),
                     _subject: "New Website Enquiry - TERAiT",
-                    _template: "table"
+                    _template: "table",
+                  }),
+                })
+                  .then((response) => response.json())
+                  .then((data) => {
+                    setIsSubmitting(false);
+                    setIsSuccess(true);
+                    setTimeout(() => {
+                      setIsSuccess(false);
+                      // @ts-expect-error - grecaptcha target type is missing
+                      e.target.reset();
+                    }, 4000);
                   })
-                })
-                .then(response => response.json())
-                .then(data => {
-                  setIsSubmitting(false);
-                  setIsSuccess(true);
-                  setTimeout(() => {
-                    setIsSuccess(false);
-                    // @ts-ignore
-                    e.target.reset();
-                  }, 4000);
-                })
-                .catch(error => {
-                  setIsSubmitting(false);
-                  alert("Failed to send message. Please try again or email us directly.");
-                });
+                  .catch((error) => {
+                    setIsSubmitting(false);
+                    alert("Failed to send message. Please try again or email us directly.");
+                  });
               }}
               className="bg-white/80 dark:bg-black/20 border border-black/5 dark:border-white/10 rounded-2xl p-6 md:p-8 space-y-5 relative"
             >
@@ -611,23 +602,23 @@ export function Contact() {
 /* ========== Footer ========== */
 export function Footer() {
   return (
-    <footer className="relative pt-20 pb-10 glass-strong shadow-2xl border-x-0 border-b-0 rounded-none rounded-t-[40px]">
+    <footer className="relative pt-10 pb-6 glass-strong shadow-2xl border-x-0 border-b-0 rounded-none rounded-t-3xl">
       <div className="container-x">
-        <div className="grid md:grid-cols-4 gap-10">
+        <div className="grid md:grid-cols-4 gap-6">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 drop-shadow-md">
-              <Wordmark size="text-2xl" />
+              <Wordmark size="text-xl" />
             </div>
-            <p className="mt-4 text-black max-w-md leading-relaxed font-semibold drop-shadow-sm">
+            <p className="mt-3 text-sm text-black max-w-md leading-relaxed font-semibold drop-shadow-sm">
               Enterprise IT infrastructure, surveillance, cloud and cybersecurity — engineered for
               businesses that refuse to compromise.
             </p>
           </div>
           <div>
-            <div className="text-sm font-bold uppercase tracking-widest text-foreground mb-4 drop-shadow-sm">
+            <div className="text-xs font-bold uppercase tracking-widest text-foreground mb-3 drop-shadow-sm">
               Company
             </div>
-            <ul className="space-y-2 text-black font-semibold">
+            <ul className="space-y-1.5 text-black font-semibold text-sm">
               <li>
                 <Link to="/about" className="hover:text-brand-red transition-colors">
                   About
@@ -651,10 +642,10 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <div className="text-sm font-bold uppercase tracking-widest text-foreground mb-4 drop-shadow-sm">
+            <div className="text-xs font-bold uppercase tracking-widest text-foreground mb-3 drop-shadow-sm">
               Reach us
             </div>
-            <ul className="space-y-2 text-black font-semibold text-sm">
+            <ul className="space-y-1.5 text-black font-semibold text-sm">
               <li>+91 99645 46464</li>
               <li>080 4336 4331</li>
               <li>sales@TERAiTtech.com</li>
@@ -662,7 +653,7 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-12 pt-6 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-4 text-sm font-semibold text-black">
+        <div className="mt-8 pt-4 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-3 text-xs font-semibold text-black">
           <div>© {new Date().getFullYear()} TERAiT Technologies Pvt Ltd. All rights reserved.</div>
           <div>Designed & engineered for enterprises.</div>
         </div>

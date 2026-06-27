@@ -11,8 +11,6 @@ export function Hero() {
       id="top"
       className="relative min-h-[100svh] flex items-center pt-28 pb-20 overflow-hidden"
     >
-
-
       <div className="container-x relative z-10 flex flex-col items-center text-center mt-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -29,7 +27,7 @@ export function Hero() {
 
         <div className="relative w-full max-w-6xl mx-auto flex flex-col items-center">
           {/* Ambient Glow Spotlight to ensure text contrast over video */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] md:w-[70%] h-[140%] bg-white/60 blur-[100px] rounded-[100%] pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] md:w-[70%] h-[140%] bg-white/20 blur-[60px] rounded-[100%] pointer-events-none" />
 
           <motion.div
             initial="hidden"

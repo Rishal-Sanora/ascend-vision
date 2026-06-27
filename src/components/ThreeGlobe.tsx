@@ -40,13 +40,7 @@ function GlobeParticles() {
           itemSize={3}
         />
       </bufferGeometry>
-      <pointsMaterial
-        size={0.035}
-        color="#0369a1"
-        transparent
-        opacity={0.85}
-        sizeAttenuation
-      />
+      <pointsMaterial size={0.035} color="#0369a1" transparent opacity={0.85} sizeAttenuation />
     </points>
   );
 }

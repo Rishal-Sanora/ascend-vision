@@ -168,7 +168,10 @@ export function Services() {
                   <p className="mt-2 text-sm text-black font-medium leading-relaxed">{s.desc}</p>
                   <ul className="mt-5 space-y-1.5">
                     {s.items.slice(0, 3).map((it) => (
-                      <li key={it} className="flex items-center gap-2 text-sm text-black font-medium">
+                      <li
+                        key={it}
+                        className="flex items-center gap-2 text-sm text-black font-medium"
+                      >
                         <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-[var(--brand-red)] to-[var(--brand-blue)]" />
                         {it}
                       </li>
