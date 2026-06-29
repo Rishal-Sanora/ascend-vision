@@ -98,7 +98,7 @@ const services: Service[] = [
   },
 ];
 
-export function Services() {
+export function Services({ isWhite = false }: { isWhite?: boolean } = {}) {
   const [active, setActive] = useState<Service | null>(null);
 
   return (
@@ -109,6 +109,7 @@ export function Services() {
           title="End-to-end enterprise infrastructure"
           subtitle="We engineer, deploy and manage high-performance technology environments for businesses that demand reliability and scale."
           linkTo="/services"
+          isWhite={isWhite}
         />
 
         <motion.div
@@ -164,13 +165,13 @@ export function Services() {
                   >
                     {s.icon}
                   </div>
-                  <h3 className="mt-5 text-xl font-display font-semibold">{s.title}</h3>
-                  <p className="mt-2 text-sm text-black font-medium leading-relaxed">{s.desc}</p>
+                  <h3 className="mt-5 text-xl font-display font-semibold text-white">{s.title}</h3>
+                  <p className="mt-2 text-sm text-white/80 font-medium leading-relaxed">{s.desc}</p>
                   <ul className="mt-5 space-y-1.5">
                     {s.items.slice(0, 3).map((it) => (
                       <li
                         key={it}
-                        className="flex items-center gap-2 text-sm text-black font-medium"
+                        className="flex items-center gap-2 text-sm text-white/80 font-medium"
                       >
                         <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-[var(--brand-red)] to-[var(--brand-blue)]" />
                         {it}
@@ -195,16 +196,18 @@ export function SectionHeader({
   subtitle,
   center = false,
   linkTo,
+  isWhite = false,
 }: {
   kicker: string;
   title: string;
   subtitle?: string;
   center?: boolean;
   linkTo?: string;
+  isWhite?: boolean;
 }) {
   const TitleEl = (
     <h2
-      className={`mt-4 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gradient drop-shadow-md ${linkTo ? "group-hover:brightness-125 transition" : ""}`}
+      className={`mt-4 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight drop-shadow-md ${isWhite ? "text-white" : "text-gradient"} ${linkTo ? "group-hover:brightness-125 transition" : ""}`}
     >
       {title}{" "}
       {linkTo && (
@@ -223,7 +226,7 @@ export function SectionHeader({
       className={`mb-12 md:mb-16 max-w-4xl ${center ? "mx-auto text-center" : ""}`}
     >
       <div
-        className={`inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-black font-bold drop-shadow-sm ${center ? "justify-center w-full" : ""}`}
+        className={`inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] font-bold drop-shadow-sm ${isWhite ? "text-white/90" : "text-foreground"} ${center ? "justify-center w-full" : ""}`}
       >
         <span className="h-px w-8 bg-gradient-to-r from-[var(--brand-red)] to-[var(--brand-blue)]" />
         {kicker}
@@ -237,7 +240,7 @@ export function SectionHeader({
         TitleEl
       )}
       {subtitle && (
-        <p className="mt-5 text-lg text-black font-semibold drop-shadow-sm leading-relaxed">
+        <p className={`mt-5 text-lg font-semibold drop-shadow-sm leading-relaxed ${isWhite ? "text-white/90" : "text-foreground"}`}>
           {subtitle}
         </p>
       )}
@@ -288,15 +291,15 @@ function ServiceModal({ service, onClose }: { service: Service | null; onClose: 
             <h3 className="mt-6 text-3xl md:text-4xl font-display font-bold text-gradient">
               {service.title}
             </h3>
-            <p className="mt-4 text-black font-medium leading-relaxed">{service.desc}</p>
+            <p className="mt-4 text-white/90 font-medium leading-relaxed">{service.desc}</p>
 
             <div className="mt-8">
-              <div className="text-xs uppercase tracking-widest text-black font-bold mb-3">
+              <div className="text-xs uppercase tracking-widest text-white/70 font-bold mb-3">
                 What's included
               </div>
               <ul className="grid sm:grid-cols-2 gap-2">
                 {service.items.map((it) => (
-                  <li key={it} className="flex items-start gap-2 text-sm">
+                  <li key={it} className="flex items-start gap-2 text-sm text-white/90">
                     <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-[var(--brand-red)] to-[var(--brand-blue)]" />
                     {it}
                   </li>
@@ -306,12 +309,12 @@ function ServiceModal({ service, onClose }: { service: Service | null; onClose: 
 
             {service.brands && (
               <div className="mt-8">
-                <div className="text-xs uppercase tracking-widest text-black font-bold mb-3">
+                <div className="text-xs uppercase tracking-widest text-white/70 font-bold mb-3">
                   Trusted technology partners
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {service.brands.map((b) => (
-                    <span key={b} className="text-xs px-3 py-1.5 rounded-full glass">
+                    <span key={b} className="text-xs px-3 py-1.5 rounded-full glass text-white">
                       {b}
                     </span>
                   ))}

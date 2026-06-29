@@ -50,8 +50,8 @@ export function About() {
                 <div className="text-3xl mb-3 group-hover:scale-110 transition-transform origin-left">
                   {f.i}
                 </div>
-                <div className="font-bold drop-shadow-sm">{f.t}</div>
-                <div className="mt-1 text-sm text-black font-semibold">{f.d}</div>
+                <div className="font-bold drop-shadow-sm text-white">{f.t}</div>
+                <div className="mt-1 text-sm text-white/80 font-semibold">{f.d}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -89,13 +89,6 @@ export function About() {
                 className="h-48 w-48 opacity-90 animate-float object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]"
               />
             </div>
-          </div>
-          <div className="absolute -bottom-6 -left-6 bg-white/20 dark:bg-black/40 backdrop-blur-3xl rounded-2xl p-5 max-w-[240px] border border-white/20 shadow-xl">
-            <div className="text-xs uppercase tracking-widest text-black font-bold">
-              Headquartered in
-            </div>
-            <div className="mt-1 font-semibold">Bengaluru, Karnataka</div>
-            <div className="text-xs text-black font-medium mt-1">Serving clients pan-India</div>
           </div>
         </motion.div>
       </div>
@@ -167,7 +160,8 @@ export function WhyUs() {
   ];
   return (
     <section id="why" className="relative py-24 md:py-32">
-      <div className="container-x">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] bg-white/40 blur-[140px] rounded-full pointer-events-none z-0" />
+      <div className="container-x relative z-10">
         <SectionHeader
           kicker="Why TERAiT"
           title="The partner enterprises rely on"
@@ -200,7 +194,7 @@ export function WhyUs() {
               className="glass gradient-border-glow rounded-2xl p-5 md:p-6 cursor-default hover:shadow-glow-blue transition-all"
             >
               <Counter to={s.n} suffix={s.s} />
-              <div className="mt-1 text-sm text-black font-semibold">{s.l}</div>
+              <div className="mt-1 text-sm text-white/80 font-semibold">{s.l}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -217,8 +211,8 @@ export function WhyUs() {
               className="glass rounded-2xl p-6 hover:shadow-xl hover:border-white/30 transition-all duration-300"
             >
               <div className="text-3xl drop-shadow-sm">{r.i}</div>
-              <div className="mt-3 font-display font-semibold text-lg">{r.t}</div>
-              <div className="mt-2 text-sm text-black leading-relaxed font-semibold">{r.d}</div>
+              <div className="mt-3 font-display font-semibold text-lg text-white">{r.t}</div>
+              <div className="mt-2 text-sm text-white/80 leading-relaxed font-semibold">{r.d}</div>
             </motion.div>
           ))}
         </div>
@@ -253,7 +247,8 @@ export function Process() {
   ];
   return (
     <section className="relative py-24 md:py-32">
-      <div className="container-x">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] bg-white/40 blur-[140px] rounded-full pointer-events-none z-0" />
+      <div className="container-x relative z-10">
         <SectionHeader
           kicker="Our process"
           title="How we deliver, every time"
@@ -272,15 +267,15 @@ export function Process() {
               className="relative glass gradient-border-glow rounded-2xl p-6 hover:shadow-xl hover:border-white/30 transition-all duration-300 group"
             >
               <div className="flex items-center justify-between">
-                <div className="text-xs font-mono text-black font-bold group-hover:text-brand-blue transition-colors">
+                <div className="text-xs font-mono text-white/70 font-bold group-hover:text-brand-blue transition-colors">
                   STEP {s.n}
                 </div>
                 <div className="h-8 w-8 rounded-full bg-gradient-to-br from-[var(--brand-red)] to-[var(--brand-blue)] text-white grid place-items-center text-sm font-bold drop-shadow-sm group-hover:shadow-glow-blue transition-shadow">
                   {i + 1}
                 </div>
               </div>
-              <h3 className="mt-4 font-display font-semibold text-lg">{s.t}</h3>
-              <p className="mt-2 text-sm text-black leading-relaxed font-semibold">{s.d}</p>
+              <h3 className="mt-4 font-display font-semibold text-lg text-white">{s.t}</h3>
+              <p className="mt-2 text-sm text-white/80 leading-relaxed font-semibold">{s.d}</p>
             </motion.div>
           ))}
         </div>
@@ -322,7 +317,7 @@ export function Brands() {
         transition={{ duration: 0.8 }}
         className="container-x"
       >
-        <div className="text-center text-xs uppercase tracking-[0.3em] text-black font-bold mb-8">
+        <div className="text-center text-xs uppercase tracking-[0.3em] text-foreground font-bold mb-8">
           Powered by the world's leading technology brands
         </div>
       </motion.div>
@@ -371,7 +366,8 @@ export function Testimonials() {
   ];
   return (
     <section className="relative py-24 md:py-32">
-      <div className="container-x">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] bg-white/40 blur-[140px] rounded-full pointer-events-none z-0" />
+      <div className="container-x relative z-10">
         <SectionHeader kicker="Loved by clients" title="Real outcomes, real teams" />
         <div className="grid md:grid-cols-3 gap-5">
           {data.map((t, i) => (
@@ -387,14 +383,14 @@ export function Testimonials() {
               <div className="text-5xl leading-none text-gradient-brand font-display drop-shadow-sm">
                 "
               </div>
-              <p className="mt-2 text-black leading-relaxed font-semibold">{t.q}</p>
+              <p className="mt-2 text-white/90 leading-relaxed font-semibold">{t.q}</p>
               <div className="mt-6 flex items-center gap-3">
                 <div className="h-11 w-11 rounded-full bg-gradient-to-br from-[var(--brand-red)] to-[var(--brand-blue)] grid place-items-center font-bold text-white shadow-md">
                   {t.n[0]}
                 </div>
                 <div>
-                  <div className="font-bold">{t.n}</div>
-                  <div className="text-xs text-black font-semibold">{t.r}</div>
+                  <div className="font-bold text-white">{t.n}</div>
+                  <div className="text-xs text-white/70 font-semibold">{t.r}</div>
                 </div>
               </div>
             </motion.div>
@@ -432,14 +428,15 @@ export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <section className="relative py-24 md:py-32">
-      <div className="container-x max-w-3xl">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[800px] bg-white/40 blur-[140px] rounded-full pointer-events-none z-0" />
+      <div className="container-x max-w-3xl relative z-10">
         <SectionHeader kicker="FAQ" title="Questions, answered" center />
         <div className="space-y-3">
           {items.map((it, i) => (
             <div key={i} className="glass rounded-2xl overflow-hidden">
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full text-left p-5 md:p-6 flex items-center justify-between gap-4"
+                className="w-full text-left p-5 md:p-6 flex items-center justify-between gap-4 text-white"
               >
                 <span className="font-medium">{it.q}</span>
                 <span className={`text-2xl transition-transform ${open === i ? "rotate-45" : ""}`}>
@@ -451,7 +448,7 @@ export function FAQ() {
                 animate={{ height: open === i ? "auto" : 0, opacity: open === i ? 1 : 0 }}
                 className="overflow-hidden"
               >
-                <div className="px-5 md:px-6 pb-6 text-black font-medium leading-relaxed">
+                <div className="px-5 md:px-6 pb-6 text-white/80 font-medium leading-relaxed">
                   {it.a}
                 </div>
               </motion.div>
@@ -470,12 +467,13 @@ export function Contact() {
 
   return (
     <section id="contact" className="relative py-24 md:py-32">
-      <div className="container-x max-w-5xl">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] bg-white/40 blur-[140px] rounded-full pointer-events-none z-0" />
+      <div className="container-x max-w-5xl relative z-10">
         <div className="glass-strong rounded-2xl p-6 md:p-10 shadow-2xl">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-3">
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-3 text-white">
             Let's build your next infrastructure
           </h2>
-          <p className="text-black font-medium mb-10 max-w-2xl">
+          <p className="text-white/80 font-medium mb-10 max-w-2xl">
             We provide high-level enterprise solutions. Connect with our experts today to scale your
             infrastructure and secure your digital assets.
           </p>
@@ -556,8 +554,7 @@ export function Contact() {
                     setIsSuccess(true);
                     setTimeout(() => {
                       setIsSuccess(false);
-                      // @ts-expect-error - grecaptcha target type is missing
-                      e.target.reset();
+                      (e.target as HTMLFormElement).reset();
                     }, 4000);
                   })
                   .catch((error) => {
@@ -609,16 +606,16 @@ export function Footer() {
             <div className="flex items-center gap-3 drop-shadow-md">
               <Wordmark size="text-xl" />
             </div>
-            <p className="mt-3 text-sm text-black max-w-md leading-relaxed font-semibold drop-shadow-sm">
+            <p className="mt-3 text-sm text-white/80 max-w-md leading-relaxed font-semibold drop-shadow-sm">
               Enterprise IT infrastructure, surveillance, cloud and cybersecurity — engineered for
               businesses that refuse to compromise.
             </p>
           </div>
           <div>
-            <div className="text-xs font-bold uppercase tracking-widest text-foreground mb-3 drop-shadow-sm">
+            <div className="text-xs font-bold uppercase tracking-widest text-white/90 mb-3 drop-shadow-sm">
               Company
             </div>
-            <ul className="space-y-1.5 text-black font-semibold text-sm">
+            <ul className="space-y-1.5 text-white/80 font-semibold text-sm">
               <li>
                 <Link to="/about" className="hover:text-brand-red transition-colors">
                   About
@@ -642,10 +639,10 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <div className="text-xs font-bold uppercase tracking-widest text-foreground mb-3 drop-shadow-sm">
+            <div className="text-xs font-bold uppercase tracking-widest text-white/90 mb-3 drop-shadow-sm">
               Reach us
             </div>
-            <ul className="space-y-1.5 text-black font-semibold text-sm">
+            <ul className="space-y-1.5 text-white/80 font-semibold text-sm">
               <li>+91 99645 46464</li>
               <li>080 4336 4331</li>
               <li>sales@TERAiTtech.com</li>
@@ -653,7 +650,7 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-8 pt-4 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-3 text-xs font-semibold text-black">
+        <div className="mt-8 pt-4 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-3 text-xs font-semibold text-white/80">
           <div>© {new Date().getFullYear()} TERAiT Technologies Pvt Ltd. All rights reserved.</div>
           <div>Designed & engineered for enterprises.</div>
         </div>

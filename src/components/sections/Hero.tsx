@@ -165,16 +165,16 @@ export function Hero() {
                 <div className="text-3xl md:text-4xl font-display font-bold text-gradient drop-shadow-sm">
                   {n}
                 </div>
-                <div className="text-xs md:text-sm font-semibold text-black mt-2">{l}</div>
+                <div className="text-xs md:text-sm font-semibold text-white/90 mt-2">{l}</div>
               </div>
             </Tilt>
           ))}
         </motion.div>
       </div>
 
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-xs font-bold text-black">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-xs font-bold text-white/70">
         <span>Scroll to explore</span>
-        <span className="h-8 w-px bg-gradient-to-b from-slate-400 to-transparent" />
+        <span className="h-8 w-px bg-gradient-to-b from-white/40 to-transparent" />
       </div>
     </section>
   );

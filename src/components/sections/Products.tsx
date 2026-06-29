@@ -77,10 +77,10 @@ const categories = [
   },
 ];
 
-export function Products() {
+export function Products({ isWhite = false }: { isWhite?: boolean } = {}) {
   return (
     <section id="products" className="relative py-24 md:py-32 overflow-hidden">
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[800px] rounded-full opacity-20 blur-3xl"
           style={{ background: "radial-gradient(closest-side,var(--brand-blue),transparent 70%)" }}
@@ -89,10 +89,11 @@ export function Products() {
 
       <div className="container-x relative z-10">
         <SectionHeader
-          kicker="Products & Solutions"
-          title="A complete catalogue, one partner"
-          subtitle="From data centres to desktops, surveillance to smart devices — sourced from the world's leading brands and deployed by certified engineers."
+          kicker="Hardware & Equipment"
+          title="World-class tech. Expertly integrated."
+          subtitle="From laptops to complex surveillance setups, we supply, install, and maintain hardware from global leaders."
           linkTo="/products"
+          isWhite={isWhite}
         />
 
         <motion.div
@@ -137,21 +138,21 @@ export function Products() {
                 />
                 <div className="relative font-bold">
                   <div className="text-3xl">{c.icon}</div>
-                  <h3 className="mt-3 font-display font-bold text-lg leading-snug">{c.name}</h3>
-                  <p className="mt-2 text-xs font-bold text-foreground/65 leading-relaxed">
+                  <h3 className="mt-3 font-display font-bold text-lg leading-snug text-white">{c.name}</h3>
+                  <p className="mt-2 text-xs font-bold text-white/70 leading-relaxed">
                     {c.items}
                   </p>
                   <div className="mt-4 flex flex-wrap gap-1.5">
                     {c.brands.slice(0, 3).map((b) => (
                       <span
                         key={b}
-                        className="font-bold text-[10px] uppercase tracking-wider px-2 py-1 rounded-full bg-white/5 border border-white/10"
+                        className="font-bold text-[10px] uppercase tracking-wider px-2 py-1 rounded-full bg-white/5 border border-white/10 text-white/90"
                       >
                         {b}
                       </span>
                     ))}
                     {c.brands.length > 3 && (
-                      <span className="font-bold text-[10px] uppercase tracking-wider px-2 py-1 rounded-full bg-white/5 border border-white/10">
+                      <span className="font-bold text-[10px] uppercase tracking-wider px-2 py-1 rounded-full bg-white/5 border border-white/10 text-white/90">
                         +{c.brands.length - 3}
                       </span>
                     )}

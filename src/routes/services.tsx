@@ -9,7 +9,7 @@ function ServicesPage() {
   return (
     <>
       <div className="pt-32 pb-20 min-h-screen relative z-10">
-        <ServicesSection />
+        <ServicesSection isWhite />
       </div>
     </>
   );

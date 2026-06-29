@@ -44,7 +44,7 @@ export function Navbar() {
             <nav
               className={`hidden md:flex items-center gap-1 transition-all duration-500 ${
                 scrolled
-                  ? "glass-strong rounded-full px-4 py-1.5 shadow-[0_10px_40px_-20px_rgba(0,0,0,0.6)] border border-white/20"
+                  ? "glass-nav rounded-full px-4 py-1.5"
                   : ""
               }`}
             >
@@ -81,7 +81,7 @@ export function Navbar() {
               aria-label={open ? "Close menu" : "Open menu"}
               onClick={() => setOpen(!open)}
               className={`md:hidden flex flex-col gap-1.5 p-3 rounded-full transition-all duration-500 ${
-                scrolled ? "glass-strong border border-white/20" : ""
+                scrolled ? "glass-nav" : ""
               }`}
             >
               <span
@@ -118,7 +118,7 @@ export function Navbar() {
             exit={{ opacity: 0, y: -10 }}
             className="fixed inset-x-0 top-[80px] z-40 md:hidden px-5"
           >
-            <div className="glass-strong rounded-3xl p-5">
+            <div className="glass-nav rounded-3xl p-5">
               <div className="flex flex-col">
                 {links.map((l) => (
                   <Link

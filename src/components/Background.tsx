@@ -1,12 +1,15 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { motion } from "framer-motion";
+import { useLocation } from "@tanstack/react-router";
 import { NetworkParticles } from "./NetworkParticles";
+import showcaseVideo from "@/assets/enterprise-it-showcase.mp4";
 
 /**
  * Real 3D animated IT background: rotating wireframe icosphere
  * (network) + orbiting nodes + particle dust. Light-theme friendly.
  */
+//... (omitting unmodified file content in thought process but replace_file_content handles the diff logic properly by targeting specific lines)
 export function ThreeBackground({ className = "" }: { className?: string }) {
   const mountRef = useRef<HTMLDivElement>(null);
 
@@ -203,51 +206,59 @@ export function AuroraBg() {
   );
 }
 
-import { useLocation } from "@tanstack/react-router";
-import teraitBgVideo from "../assets/terait-bg-1080p-16x9.mp4";
-
 export function VideoBackground() {
   const location = useLocation();
   const path = location.pathname.toLowerCase();
-  const isAltVideo = path.includes("/services") || path.includes("/products");
-  const isAboutPage = path.includes("about");
+  const isProducts = path.includes("/product");
+  const isServices = path.includes("/service");
 
-  let videoSrc = "/background-video.mp4";
-  if (isAltVideo) videoSrc = "/terait-loop-1080p-fast.mp4";
+  const v1 = useRef<HTMLVideoElement>(null);
+  const v2 = useRef<HTMLVideoElement>(null);
+  const v3 = useRef<HTMLVideoElement>(null);
 
-  if (isAboutPage) {
-    return (
-      <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden z-0 bg-black">
-        <video
-          key="/terait-bg-1080p-16x9.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 h-full w-full object-cover z-10 opacity-100"
-        >
-          <source src="/terait-bg-1080p-16x9.mp4" type="video/mp4" />
-        </video>
-      </div>
-    );
-  }
+  useEffect(() => {
+    // Explicitly call load and play on all videos to bypass browser throttling of opacity-0 elements
+    [v1, v2, v3].forEach(v => {
+      if (v.current) {
+        v.current.load();
+        v.current.play().catch(() => {});
+      }
+    });
+  }, [path]);
 
   return (
-    <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden z-0">
+    <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden z-0 bg-background">
       <video
-        key={videoSrc}
+        ref={v1}
+        src="/background-video.mp4"
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 h-full w-full object-cover z-10 opacity-100"
-      >
-        <source src={videoSrc} type="video/mp4" />
-      </video>
-      <div className="absolute inset-0 z-20 bg-white/5" />
-
-      {/* Interactive Neural Network Particles */}
-      <NetworkParticles />
+        className={`absolute inset-0 h-full w-full object-cover z-10 transition-opacity duration-500 ${!isProducts && !isServices ? "opacity-100" : "opacity-0"}`}
+      />
+      <video
+        ref={v2}
+        src="/terait-loop-1080p-fast.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        className={`absolute inset-0 h-full w-full object-cover z-10 transition-opacity duration-500 ${isProducts ? "opacity-100" : "opacity-0"}`}
+      />
+      <video
+        ref={v3}
+        src={showcaseVideo}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className={`absolute inset-0 h-full w-full object-cover z-10 transition-opacity duration-500 ${isServices ? "opacity-100" : "opacity-0"}`}
+      />
+      <div className={`absolute inset-0 z-20 ${isServices ? "bg-black/20" : "bg-white/5"}`} />
     </div>
   );
 }
+
+
+
