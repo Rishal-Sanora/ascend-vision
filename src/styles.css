@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Lato", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Lato", ui-sans-serif, system-ui, sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -57,8 +57,8 @@
   --popover: rgba(255, 255, 255, 0.9);
   --popover-foreground: #0f172a;
 
-  --brand-red: oklch(0.5 0.25 15); /* Rich electric crimson */
-  --brand-blue: oklch(0.55 0.2 250); /* Deep azure */
+  --brand-red: #183962; /* Terait Deep Blue */
+  --brand-blue: #183962; /* Terait Deep Blue */
 
   --primary: var(--brand-blue);
   --primary-foreground: #ffffff;
@@ -153,25 +153,14 @@
 }
 
 @utility text-gradient {
-  background: linear-gradient(
-    135deg,
-    var(--foreground) 0%,
-    var(--brand-blue) 40%,
-    var(--brand-red) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--brand-blue);
   text-shadow: none !important;
 }
 
 /* Dark theme override removed for light theme */
 
 @utility text-gradient-brand {
-  background: linear-gradient(135deg, var(--brand-blue), var(--brand-red));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--brand-blue);
   text-shadow: none !important;
 }
 
@@ -188,12 +177,7 @@
     inset: -1px;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(
-      135deg,
-      var(--brand-blue) 0%,
-      transparent 40%,
-      var(--brand-red) 100%
-    );
+    background: var(--brand-blue);
     -webkit-mask:
       linear-gradient(#000 0 0) content-box,
       linear-gradient(#000 0 0);
@@ -268,6 +252,6 @@
   background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(var(--brand-red), var(--brand-blue));
+  background: var(--brand-blue);
   border-radius: 10px;
 }

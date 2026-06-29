@@ -64,12 +64,6 @@ const categories = [
     brands: ["Zebra", "Honeywell", "Epson", "NCR"],
   },
   {
-    name: "Mobility & Smart Devices",
-    icon: "📱",
-    items: "Smartphones, Tablets, Wearables",
-    brands: ["Apple", "Samsung", "Lenovo", "OnePlus"],
-  },
-  {
     name: "IoT & Smart Solutions",
     icon: "🛰️",
     items: "Smart Cities, Industrial IoT, AI Automation",
