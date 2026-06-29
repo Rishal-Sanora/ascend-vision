@@ -38,7 +38,7 @@ export function Navbar() {
       >
         <div className="container-x">
           <div className="flex items-center justify-between w-full py-3">
-            <Link to="/" className="flex items-center" aria-label="TERAiT home">
+            <Link to="/" className="flex items-center" aria-label="Terait home">
               <Wordmark />
             </Link>
             <nav

@@ -85,14 +85,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
       { name: "theme-color", content: "#f7f8fb" },
-      { title: "TERAiT Technologies" },
+      { title: "Terait Technologies" },
       {
         name: "description",
         content:
-          "Enterprise IT infrastructure, networking, surveillance, cloud and cybersecurity from TERAiT Technologies, Bengaluru.",
+          "Enterprise IT infrastructure, networking, surveillance, cloud and cybersecurity from Terait Technologies, Bengaluru.",
       },
-      { name: "author", content: "TERAiT Technologies" },
-      { property: "og:site_name", content: "TERAiT Technologies" },
+      { name: "author", content: "Terait Technologies" },
+      { property: "og:site_name", content: "Terait Technologies" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

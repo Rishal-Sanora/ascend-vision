@@ -19,9 +19,9 @@ export function About() {
       <div className="container-x grid lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
         <div>
           <SectionHeader
-            kicker="About TERAiT"
+            kicker="About Terait"
             title="Empowering businesses through technical excellence"
-            subtitle="TERAiT Technologies is a leading provider of comprehensive IT infrastructure and specialized surveillance solutions. We bridge complex technology with seamless business operations — from architecture to 24/7 managed care."
+            subtitle="Terait Technologies is a leading provider of comprehensive IT infrastructure and specialized surveillance solutions. We bridge complex technology with seamless business operations — from architecture to 24/7 managed care."
           />
           <motion.div
             className="grid sm:grid-cols-2 gap-4 mt-8"
@@ -163,7 +163,7 @@ export function WhyUs() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] bg-white/40 blur-[140px] rounded-full pointer-events-none z-0" />
       <div className="container-x relative z-10">
         <SectionHeader
-          kicker="Why TERAiT"
+          kicker="Why Terait"
           title="The partner enterprises rely on"
           subtitle="We combine technical expertise with a relentless commitment to reliability — ensuring your IT is built for growth, scale and security."
         />
@@ -349,17 +349,17 @@ export function Brands() {
 export function Testimonials() {
   const data = [
     {
-      q: "TERAiT helped us set up our office network and CCTV system perfectly. Their team is professional and highly skilled.",
+      q: "Terait helped us set up our office network and CCTV system perfectly. Their team is professional and highly skilled.",
       n: "Rajesh Kumar",
       r: "Business Owner — Bengaluru",
     },
     {
-      q: "The server setup and networking delivered by TERAiT exceeded our expectations. Reliable and efficient service throughout.",
+      q: "The server setup and networking delivered by Terait exceeded our expectations. Reliable and efficient service throughout.",
       n: "Suresh Raina",
       r: "IT Manager — Bengaluru",
     },
     {
-      q: "Great after-support and quick installation. TERAiT is our go-to partner for everything IT.",
+      q: "Great after-support and quick installation. Terait is our go-to partner for everything IT.",
       n: "Meera Nair",
       r: "Operations Head — Bengaluru",
     },
@@ -405,11 +405,11 @@ export function Testimonials() {
 export function FAQ() {
   const items = [
     {
-      q: "What IT services does TERAiT Technologies provide?",
+      q: "What IT services does Terait Technologies provide?",
       a: "We specialise in IT networking, CCTV & surveillance, server setup, cloud enablement, cybersecurity, hardware supply (laptops, printers, etc.), and UPS power backup solutions — all delivered end-to-end.",
     },
     {
-      q: "Where is TERAiT Technologies located?",
+      q: "Where is Terait Technologies located?",
       a: "Our headquarters is at #24, 100 Feet Rd, HRBR Layout 1st Block, Banaswadi, Bengaluru, Karnataka 560043. We serve clients across India.",
     },
     {
@@ -490,11 +490,11 @@ export function Contact() {
                 label="Phone"
                 value={
                   <>
-                    <a href="tel:+919964546464" className="hover:text-foreground font-medium">
+                    <a href="tel:+919964546464" className="hover:text-brand-blue font-medium transition-colors">
                       +91 99645 46464
                     </a>
-                    <span className="text-foreground/40 mx-2">·</span>
-                    <a href="tel:08043364331" className="hover:text-foreground font-medium">
+                    <span className="text-black/40 mx-2">·</span>
+                    <a href="tel:08043364331" className="hover:text-brand-blue font-medium transition-colors">
                       080 4336 4331
                     </a>
                   </>
@@ -505,10 +505,10 @@ export function Contact() {
                 label="Email"
                 value={
                   <a
-                    href="mailto:sales@TERAiTtech.com"
-                    className="hover:text-foreground font-medium"
+                    href="mailto:sales@teraittech.com"
+                    className="hover:text-brand-blue font-medium transition-colors"
                   >
-                    sales@TERAiTtech.com
+                    sales@teraittech.com
                   </a>
                 }
               />
@@ -533,7 +533,7 @@ export function Contact() {
                 setIsSubmitting(true);
                 const f = new FormData(e.currentTarget);
 
-                fetch("https://formsubmit.co/ajax/sales@TERAiTtech.com", {
+                fetch("https://formsubmit.co/ajax/sales@teraittech.com", {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json",
@@ -544,7 +544,7 @@ export function Contact() {
                     email: f.get("email"),
                     phone: f.get("phone"),
                     message: f.get("message"),
-                    _subject: "New Website Enquiry - TERAiT",
+                    _subject: "New Website Enquiry - Terait",
                     _template: "table",
                   }),
                 })
@@ -645,13 +645,13 @@ export function Footer() {
             <ul className="space-y-1.5 text-white/80 font-semibold text-sm">
               <li>+91 99645 46464</li>
               <li>080 4336 4331</li>
-              <li>sales@TERAiTtech.com</li>
+              <li>sales@teraittech.com</li>
               <li>Bengaluru, Karnataka</li>
             </ul>
           </div>
         </div>
         <div className="mt-8 pt-4 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-3 text-xs font-semibold text-white/80">
-          <div>© {new Date().getFullYear()} TERAiT Technologies Pvt Ltd. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} Terait Technologies Pvt Ltd. All rights reserved.</div>
           <div>Designed & engineered for enterprises.</div>
         </div>
       </div>

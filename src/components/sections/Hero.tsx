@@ -95,7 +95,7 @@ export function Hero() {
             >
               Enterprise networking, surveillance, cloud and cybersecurity — delivered end-to-end by
               certified engineers.{" "}
-              <span className="font-bold text-brand-red">TERAiT Technologies</span> bridges complex
+              <span className="font-bold text-brand-red">Terait Technology</span> bridges complex
               infrastructure with seamless business operations.
             </motion.p>
           </motion.div>

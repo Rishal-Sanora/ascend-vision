@@ -46,11 +46,11 @@ export function ContactModal() {
                 label="Phone"
                 value={
                   <>
-                    <a href="tel:+919964546464" className="hover:text-foreground font-medium">
+                    <a href="tel:+919964546464" className="hover:text-brand-blue font-medium transition-colors">
                       +91 99645 46464
                     </a>
-                    <span className="text-foreground/40 mx-2">·</span>
-                    <a href="tel:08043364331" className="hover:text-foreground font-medium">
+                    <span className="text-black/40 mx-2">·</span>
+                    <a href="tel:08043364331" className="hover:text-brand-blue font-medium transition-colors">
                       080 4336 4331
                     </a>
                   </>
@@ -61,11 +61,10 @@ export function ContactModal() {
                 label="Email"
                 value={
                   <a
-                    href="mailto:lewissanorarishu26@gmail
-                    .com"
-                    className="hover:text-foreground font-medium"
+                    href="mailto:sales@teraittech.com"
+                    className="hover:text-brand-blue font-medium transition-colors"
                   >
-                    lewissanorarishu26@gmail.com
+                    sales@teraittech.com
                   </a>
                 }
               />
@@ -89,7 +88,7 @@ export function ContactModal() {
                 setIsSubmitting(true);
                 const f = new FormData(e.currentTarget);
 
-                fetch("https://formsubmit.co/ajax/sales@TERAiTtech.com", {
+                fetch("https://formsubmit.co/ajax/sales@teraittech.com", {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json",
@@ -100,7 +99,7 @@ export function ContactModal() {
                     email: f.get("email"),
                     phone: f.get("phone"),
                     message: f.get("message"),
-                    _subject: "New Website Enquiry - TERAiT",
+                    _subject: "New Website Enquiry - Terait",
                     _template: "table",
                   }),
                 })
@@ -166,10 +165,10 @@ export function ContactRow({
         {icon}
       </div>
       <div>
-        <div className="text-[10px] uppercase tracking-widest text-foreground/50 font-bold">
+        <div className="text-[10px] uppercase tracking-widest text-black/60 font-bold">
           {label}
         </div>
-        <div className="mt-0.5 text-foreground/90 text-sm leading-tight">{value}</div>
+        <div className="mt-0.5 text-black/90 text-sm leading-tight">{value}</div>
       </div>
     </div>
   );
@@ -189,10 +188,10 @@ export function Field({
   textarea?: boolean;
 }) {
   const base =
-    "w-full rounded-xl border border-white/20 bg-white/5 dark:bg-black/10 px-4 py-3 text-foreground backdrop-blur-sm transition-all duration-300 hover:bg-white/10 focus:border-brand-blue focus:bg-white/10 focus:outline-none focus:ring-4 focus:ring-brand-blue/30 focus:shadow-glow-blue";
+    "w-full rounded-xl border border-black/10 bg-black/5 dark:bg-black/10 px-4 py-3 text-black backdrop-blur-sm transition-all duration-300 hover:bg-black/10 focus:border-brand-blue focus:bg-white/50 focus:outline-none focus:ring-4 focus:ring-brand-blue/30 focus:shadow-glow-blue";
   return (
     <label className="block">
-      <span className="text-[10px] font-bold uppercase tracking-widest text-foreground/60">
+      <span className="text-[10px] font-bold uppercase tracking-widest text-black/60">
         {label}
         {required && " *"}
       </span>

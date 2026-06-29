@@ -15,13 +15,13 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "TERAiT Technologies — Secure. Smart. Scalable. Enterprise IT in Bengaluru" },
+      { title: "Terait Technologies — Secure. Smart. Scalable. Enterprise IT in Bengaluru" },
       {
         name: "description",
         content:
           "Enterprise networking, surveillance, cloud, cybersecurity and managed IT services. Certified engineers delivering end-to-end infrastructure across India.",
       },
-      { property: "og:title", content: "TERAiT Technologies — Enterprise IT, Cloud & Security" },
+      { property: "og:title", content: "Terait Technologies — Enterprise IT, Cloud & Security" },
       {
         property: "og:description",
         content:
