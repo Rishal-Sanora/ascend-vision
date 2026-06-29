@@ -15,7 +15,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs md:text-sm font-semibold text-black mb-10 drop-shadow-lg bg-transparent"
+          className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs md:text-sm font-semibold text-white mb-10 drop-shadow-lg bg-transparent"
         >
           <span className="relative flex h-2.5 w-2.5">
             <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
@@ -37,7 +37,7 @@ export function Hero() {
             }}
             className="relative z-10 flex flex-col items-center w-full"
           >
-            <h1 className="text-[clamp(3.5rem,10vw,8.5rem)] leading-[0.9] font-bold tracking-tighter mb-8 flex flex-col items-center drop-shadow-[0_2px_10px_rgba(255,255,255,1)] min-h-[220px] justify-center">
+            <h1 className="text-[clamp(3.5rem,10vw,8.5rem)] leading-[0.9] font-bold tracking-tighter mb-8 flex flex-col items-center drop-shadow-sm min-h-[220px] justify-center">
               <div className="flex gap-4 flex-wrap justify-center overflow-hidden">
                 <motion.span
                   variants={{
@@ -81,7 +81,7 @@ export function Hero() {
                 ]}
                 wrapper="span"
                 speed={10}
-                className="text-gradient-brand mt-1 inline-block drop-shadow-[0_10px_40px_rgba(244,63,94,0.4)]"
+                className="text-gradient-brand mt-1 inline-block drop-shadow-sm"
                 repeat={Infinity}
               />
             </h1>
@@ -91,7 +91,7 @@ export function Hero() {
                 hidden: { opacity: 0, y: 20 },
                 show: { opacity: 1, y: 0, transition: { duration: 1.2, delay: 0.8 } },
               }}
-              className="max-w-3xl text-lg md:text-2xl text-foreground font-semibold leading-relaxed drop-shadow-[0_2px_10px_rgba(255,255,255,1)] mt-4 px-4"
+              className="max-w-3xl text-lg md:text-2xl text-white font-semibold leading-relaxed drop-shadow-[0_2px_10px_rgba(255,255,255,1)] mt-4 px-4"
             >
               Enterprise networking, surveillance, cloud and cybersecurity — delivered end-to-end by
               certified engineers.{" "}
@@ -126,14 +126,14 @@ export function Hero() {
           </button>
           <a
             href="tel:+919964546464"
-            className="group hidden sm:inline-flex items-center gap-3 text-foreground/90 hover:text-foreground transition ml-2 drop-shadow-md"
+            className="group hidden sm:inline-flex items-center gap-3 text-white/90 hover:text-white transition ml-2 drop-shadow-md"
           >
             <span className="grid place-items-center h-12 w-12 rounded-full bg-foreground/5 border border-foreground/10 shadow-md group-hover:scale-110 transition-transform">
               📞
             </span>
             <div className="text-left text-sm">
-              <div className="text-black font-semibold">Talk to an expert</div>
-              <div className="font-bold text-base text-black">+91 99645 46464</div>
+              <div className="text-white font-semibold">Talk to an expert</div>
+              <div className="font-bold text-base text-white">+91 99645 46464</div>
             </div>
           </a>
         </motion.div>

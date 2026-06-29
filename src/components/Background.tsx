@@ -255,7 +255,7 @@ export function VideoBackground() {
         playsInline
         className={`absolute inset-0 h-full w-full object-cover z-10 transition-opacity duration-500 ${isServices ? "opacity-100" : "opacity-0"}`}
       />
-      <div className={`absolute inset-0 z-20 ${isServices ? "bg-black/20" : "bg-white/5"}`} />
+      <div className="absolute inset-0 z-20 bg-black/20" />
     </div>
   );
 }
