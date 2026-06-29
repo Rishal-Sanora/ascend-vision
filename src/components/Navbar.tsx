@@ -54,7 +54,7 @@ export function Navbar() {
                   to={l.to}
                   activeProps={{ className: "active" }}
                   activeOptions={l.exact ? { exact: true } : undefined}
-                  className="relative px-4 py-2 text-sm text-foreground/80 hover:text-foreground transition-colors group [&.active]:text-foreground"
+                  className="relative px-4 py-2 text-sm font-bold text-foreground/80 hover:text-foreground transition-colors group [&.active]:text-foreground"
                 >
                   {l.label}
                   <span className="absolute inset-x-4 -bottom-0.5 h-px scale-x-0 origin-left bg-gradient-to-r from-[var(--brand-red)] to-[var(--brand-blue)] transition-transform duration-300 group-hover:scale-x-100 group-[.active]:scale-x-100" />
@@ -127,7 +127,7 @@ export function Navbar() {
                     activeProps={{ className: "active" }}
                     activeOptions={l.exact ? { exact: true } : undefined}
                     onClick={() => setOpen(false)}
-                    className="group flex items-center justify-between border-b border-white/5 py-4 text-xl font-medium text-foreground/80 transition-colors hover:text-foreground [&.active]:text-foreground"
+                    className="group flex items-center justify-between border-b border-white/5 py-4 text-xl font-bold text-foreground/80 transition-colors hover:text-foreground [&.active]:text-foreground"
                   >
                     {l.label}
                   </Link>
