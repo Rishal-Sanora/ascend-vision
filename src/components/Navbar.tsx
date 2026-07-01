@@ -33,7 +33,7 @@ export function Navbar() {
     <>
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          scrolled ? "py-2 bg-black/80 backdrop-blur-lg border-b border-white/10" : "py-4 bg-gradient-to-b from-black/70 via-black/30 to-transparent"
+          scrolled ? "py-2 glass-nav border-b border-white/10" : "py-4"
         }`}
       >
         <div className="container-x">
