@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { useLocation } from "@tanstack/react-router";
 import { NetworkParticles } from "./NetworkParticles";
 import showcaseVideo from "@/assets/enterprise-it-showcase.mp4";
-// Using the newly updated video file below:
-import companyJourneyVideo from "@/assets/company_journey_v2.mp4";
 import teraitContactVideo from "@/assets/terait-contact-page-branded.mp4";
+import teraitJourneyVideo from "@/assets/terait_journey_years_nologo.mp4";
+import teraitDoorRevealVideo from "@/assets/terait_door_reveal.mp4";
 
 /**
  * Real 3D animated IT background: rotating wireframe icosphere
@@ -290,16 +290,16 @@ export function VideoBackground() {
       />
       <video
         ref={v4}
-        src={companyJourneyVideo}
+        src={teraitJourneyVideo}
         autoPlay
         loop
         muted
         playsInline
-        className={`absolute inset-0 h-[100svh] w-full object-contain z-20 transition-opacity duration-500 ${isAbout ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 h-[100svh] w-full object-cover z-20 transition-opacity duration-500 ${isAbout ? "opacity-100" : "opacity-0"}`}
       />
       <video
         ref={v5}
-        src="/terait_door_reveal.mp4"
+        src={teraitDoorRevealVideo}
         autoPlay
         loop
         muted
