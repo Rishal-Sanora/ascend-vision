@@ -311,7 +311,7 @@ export function VideoBackground() {
         loop
         muted
         playsInline
-        className={`absolute inset-0 h-[100svh] w-full object-cover z-20 transition-opacity duration-500 ${isContact ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 h-[100svh] w-full object-contain z-20 transition-opacity duration-500 ${isContact ? "opacity-100" : "opacity-0"}`}
       />
       <div className={`absolute inset-0 z-20 bg-black/20 transition-opacity duration-500 ${(isHome || isAbout || isWhy || isContact) ? "opacity-0" : "opacity-100"}`} />
     </div>

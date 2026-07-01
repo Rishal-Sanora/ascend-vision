@@ -477,8 +477,8 @@ export function Contact({ isStandalone = false }: { isStandalone?: boolean } = {
       {!isStandalone && (
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] bg-white/40 blur-[140px] rounded-full pointer-events-none z-0" />
       )}
-      <div className="container-x max-w-5xl relative z-10">
-        <div className="glass-strong rounded-2xl p-6 md:p-10 shadow-2xl">
+      <div className="container-x max-w-5xl relative z-10 mt-[15vh]">
+        <div className="bg-black/40 backdrop-blur-[2px] border border-white/10 rounded-2xl p-6 md:p-10 shadow-2xl">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-3 text-white">
             Let's build your next infrastructure
           </h2>
