@@ -47,11 +47,17 @@ export function ContactModal() {
                 label="Phone"
                 value={
                   <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
-                    <a href="tel:+919964546464" className="hover:text-brand-blue font-medium transition-colors whitespace-nowrap">
+                    <a
+                      href="tel:+919964546464"
+                      className="hover:text-brand-blue font-medium transition-colors whitespace-nowrap"
+                    >
                       +91 99645 46464
                     </a>
                     <span className="hidden sm:inline text-black/40">·</span>
-                    <a href="tel:08043364331" className="hover:text-brand-blue font-medium transition-colors whitespace-nowrap">
+                    <a
+                      href="tel:08043364331"
+                      className="hover:text-brand-blue font-medium transition-colors whitespace-nowrap"
+                    >
                       080 4336 4331
                     </a>
                   </div>
@@ -166,9 +172,7 @@ export function ContactRow({
         {icon}
       </div>
       <div>
-        <div className="text-[10px] uppercase tracking-widest text-black/60 font-bold">
-          {label}
-        </div>
+        <div className="text-[10px] uppercase tracking-widest text-black/60 font-bold">{label}</div>
         <div className="mt-0.5 text-black/90 text-sm leading-tight">{value}</div>
       </div>
     </div>

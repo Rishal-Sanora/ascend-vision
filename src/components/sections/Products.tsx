@@ -132,10 +132,10 @@ export function Products({ isWhite = false }: { isWhite?: boolean } = {}) {
                 />
                 <div className="relative font-bold">
                   <div className="text-3xl">{c.icon}</div>
-                  <h3 className="mt-3 font-display font-bold text-lg leading-snug text-white">{c.name}</h3>
-                  <p className="mt-2 text-xs font-bold text-white/70 leading-relaxed">
-                    {c.items}
-                  </p>
+                  <h3 className="mt-3 font-display font-bold text-lg leading-snug text-white">
+                    {c.name}
+                  </h3>
+                  <p className="mt-2 text-xs font-bold text-white/70 leading-relaxed">{c.items}</p>
                   <div className="mt-4 flex flex-wrap gap-1.5">
                     {c.brands.slice(0, 3).map((b) => (
                       <span

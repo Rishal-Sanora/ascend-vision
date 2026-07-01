@@ -240,7 +240,9 @@ export function SectionHeader({
         TitleEl
       )}
       {subtitle && (
-        <p className={`mt-5 text-lg font-semibold drop-shadow-sm leading-relaxed ${isWhite ? "text-white/90" : "text-foreground"}`}>
+        <p
+          className={`mt-5 text-lg font-semibold drop-shadow-sm leading-relaxed ${isWhite ? "text-white/90" : "text-foreground"}`}
+        >
           {subtitle}
         </p>
       )}

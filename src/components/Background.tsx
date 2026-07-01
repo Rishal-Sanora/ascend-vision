@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { useLocation } from "@tanstack/react-router";
 import { NetworkParticles } from "./NetworkParticles";
 import showcaseVideo from "@/assets/enterprise-it-showcase.mp4";
+// Using the newly updated video file below:
+import companyJourneyVideo from "@/assets/company_journey_v2.mp4";
 import teraitContactVideo from "@/assets/terait-contact-page-branded.mp4";
-import teraitJourneyVideo from "@/assets/terait_journey_years_nologo.mp4";
-import teraitDoorRevealVideo from "@/assets/terait_door_reveal.mp4";
 
 /**
  * Real 3D animated IT background: rotating wireframe icosphere
@@ -257,7 +257,10 @@ export function VideoBackground() {
   }, [isHome, isProducts, isServices, isAbout, isWhy, isContact]);
 
   return (
-    <div aria-hidden className={`pointer-events-none fixed inset-0 overflow-hidden z-0 ${(isAbout || isWhy || isContact) ? 'bg-black' : 'bg-background'}`}>
+    <div
+      aria-hidden
+      className={`pointer-events-none fixed inset-0 overflow-hidden z-0 ${isAbout || isWhy || isContact ? "bg-black" : "bg-background"}`}
+    >
       <video
         ref={v1}
         src="/background-video.mp4"
@@ -287,16 +290,16 @@ export function VideoBackground() {
       />
       <video
         ref={v4}
-        src={teraitJourneyVideo}
+        src={companyJourneyVideo}
         autoPlay
         loop
         muted
         playsInline
-        className={`absolute inset-0 h-[100svh] w-full object-cover z-20 transition-opacity duration-500 ${isAbout ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 h-[100svh] w-full object-contain z-20 transition-opacity duration-500 ${isAbout ? "opacity-100" : "opacity-0"}`}
       />
       <video
         ref={v5}
-        src={teraitDoorRevealVideo}
+        src="/terait_door_reveal.mp4"
         autoPlay
         loop
         muted
@@ -312,9 +315,9 @@ export function VideoBackground() {
         playsInline
         className={`absolute inset-0 h-[100svh] w-full object-cover z-20 transition-opacity duration-500 ${isContact ? "opacity-100" : "opacity-0"}`}
       />
-      <div className={`absolute inset-0 z-20 bg-black/20 transition-opacity duration-500 ${(isHome || isAbout || isWhy || isContact) ? "opacity-0" : "opacity-100"}`} />
+      <div
+        className={`absolute inset-0 z-20 bg-black/20 transition-opacity duration-500 ${isHome || isAbout || isWhy || isContact ? "opacity-0" : "opacity-100"}`}
+      />
     </div>
   );
 }
-
-

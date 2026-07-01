@@ -84,8 +84,7 @@ export function About({ isStandalone = false }: { isStandalone?: boolean } = {})
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="aspect-[4/5] rounded-3xl overflow-hidden relative shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] ring-1 ring-white/20">
-            <div className="absolute inset-0 z-20 mix-blend-screen pointer-events-auto">
-            </div>
+            <div className="absolute inset-0 z-20 mix-blend-screen pointer-events-auto"></div>
             <div className="absolute inset-0 z-30 grid place-items-center pointer-events-none">
               <img
                 src="/1newface-removebg-preview.png"
@@ -127,7 +126,10 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
     return () => io.disconnect();
   }, [to]);
   return (
-    <div ref={ref} className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gradient">
+    <div
+      ref={ref}
+      className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gradient"
+    >
       {n}
       {suffix}
     </div>
@@ -499,11 +501,17 @@ export function Contact({ isStandalone = false }: { isStandalone?: boolean } = {
                 label="Phone"
                 value={
                   <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
-                    <a href="tel:+919964546464" className="hover:text-brand-blue font-medium transition-colors whitespace-nowrap">
+                    <a
+                      href="tel:+919964546464"
+                      className="hover:text-brand-blue font-medium transition-colors whitespace-nowrap"
+                    >
                       +91 99645 46464
                     </a>
                     <span className="hidden sm:inline text-black/40">·</span>
-                    <a href="tel:08043364331" className="hover:text-brand-blue font-medium transition-colors whitespace-nowrap">
+                    <a
+                      href="tel:08043364331"
+                      className="hover:text-brand-blue font-medium transition-colors whitespace-nowrap"
+                    >
                       080 4336 4331
                     </a>
                   </div>
@@ -521,7 +529,11 @@ export function Contact({ isStandalone = false }: { isStandalone?: boolean } = {
                   </a>
                 }
               />
-              <ContactRow icon={<Clock className="w-5 h-5" />} label="Working Hours" value="Mon-Sat, 9:30 am to 6:30 pm" />
+              <ContactRow
+                icon={<Clock className="w-5 h-5" />}
+                label="Working Hours"
+                value="Mon-Sat, 9:30 am to 6:30 pm"
+              />
 
               <div className="mt-8 rounded-xl overflow-hidden h-[250px] border border-black/10">
                 <iframe
@@ -653,13 +665,22 @@ export function Footer() {
             </div>
             <ul className="space-y-1.5 text-white/80 font-semibold text-sm">
               <li>
-                <a href="tel:+919964546464" className="hover:text-brand-red transition-colors">+91 99645 46464</a>
+                <a href="tel:+919964546464" className="hover:text-brand-red transition-colors">
+                  +91 99645 46464
+                </a>
               </li>
               <li>
-                <a href="tel:08043364331" className="hover:text-brand-red transition-colors">080 4336 4331</a>
+                <a href="tel:08043364331" className="hover:text-brand-red transition-colors">
+                  080 4336 4331
+                </a>
               </li>
               <li>
-                <a href="mailto:sales@teraittech.com" className="hover:text-brand-red transition-colors">sales@teraittech.com</a>
+                <a
+                  href="mailto:sales@teraittech.com"
+                  className="hover:text-brand-red transition-colors"
+                >
+                  sales@teraittech.com
+                </a>
               </li>
               <li>Bengaluru, Karnataka</li>
             </ul>
