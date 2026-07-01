@@ -7,8 +7,10 @@ export const Route = createFileRoute("/about")({
 
 function AboutPage() {
   return (
-    <div className="pt-32 pb-20 min-h-screen">
-      <AboutSection />
+    <div className="pt-32 pb-20 min-h-screen relative overflow-hidden">
+      <div className="relative z-10">
+        <AboutSection isStandalone={true} />
+      </div>
     </div>
   );
 }

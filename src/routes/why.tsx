@@ -7,8 +7,10 @@ export const Route = createFileRoute("/why")({
 
 function WhyUsPage() {
   return (
-    <div className="pt-32 pb-20 min-h-screen">
-      <WhyUsSection />
+    <div className="pt-32 pb-20 min-h-screen relative overflow-hidden">
+      <div className="relative z-10">
+        <WhyUsSection isStandalone={true} />
+      </div>
     </div>
   );
 }

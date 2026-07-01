@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 // Global event to open the contact modal from anywhere
 export const OPEN_CONTACT_MODAL_EVENT = "open-contact-modal";
@@ -37,12 +38,12 @@ export function ContactModal() {
           <div className="grid lg:grid-cols-2 gap-8">
             <div className="space-y-4">
               <ContactRow
-                icon="📍"
+                icon={<MapPin className="w-5 h-5" />}
                 label="Headquarters"
                 value="#24, 100 Feet Rd, HRBR Layout 1st Block, Banaswadi, Bengaluru, Karnataka 560043"
               />
               <ContactRow
-                icon="📞"
+                icon={<Phone className="w-5 h-5" />}
                 label="Phone"
                 value={
                   <>
@@ -57,7 +58,7 @@ export function ContactModal() {
                 }
               />
               <ContactRow
-                icon="✉️"
+                icon={<Mail className="w-5 h-5" />}
                 label="Email"
                 value={
                   <a
@@ -155,13 +156,13 @@ export function ContactRow({
   label,
   value,
 }: {
-  icon: string;
+  icon: React.ReactNode;
   label: string;
   value: React.ReactNode;
 }) {
   return (
     <div className="bg-white/50 dark:bg-black/10 border border-black/5 dark:border-white/5 rounded-xl p-4 flex gap-4 items-center">
-      <div className="h-10 w-10 shrink-0 rounded-lg bg-gradient-to-br from-[var(--brand-red)] to-[var(--brand-blue)] text-white text-xl grid place-items-center font-bold">
+      <div className="h-10 w-10 shrink-0 rounded-lg bg-gradient-to-br from-[var(--brand-red)] to-[var(--brand-blue)] text-white grid place-items-center font-bold">
         {icon}
       </div>
       <div>

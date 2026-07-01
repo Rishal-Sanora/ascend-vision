@@ -4,12 +4,15 @@ import { motion } from "framer-motion";
 import { useLocation } from "@tanstack/react-router";
 import { NetworkParticles } from "./NetworkParticles";
 import showcaseVideo from "@/assets/enterprise-it-showcase.mp4";
+// Using the newly updated video file below:
+import companyJourneyVideo from "@/assets/company_journey_v2.mp4";
+import teraitOfficeReveal from "@/assets/terait_office_reveal.mp4";
+import teraitContactVideo from "@/assets/terait-contact-page-branded.mp4";
 
 /**
  * Real 3D animated IT background: rotating wireframe icosphere
  * (network) + orbiting nodes + particle dust. Light-theme friendly.
  */
-//... (omitting unmodified file content in thought process but replace_file_content handles the diff logic properly by targeting specific lines)
 export function ThreeBackground({ className = "" }: { className?: string }) {
   const mountRef = useRef<HTMLDivElement>(null);
 
@@ -209,16 +212,23 @@ export function AuroraBg() {
 export function VideoBackground() {
   const location = useLocation();
   const path = location.pathname.toLowerCase();
+  const isHome = path === "/" || path === "";
   const isProducts = path.includes("/product");
   const isServices = path.includes("/service");
+  const isAbout = path.includes("/about");
+  const isWhy = path.includes("/why");
+  const isContact = path.includes("/contact");
 
   const v1 = useRef<HTMLVideoElement>(null);
   const v2 = useRef<HTMLVideoElement>(null);
   const v3 = useRef<HTMLVideoElement>(null);
+  const v4 = useRef<HTMLVideoElement>(null);
+  const v5 = useRef<HTMLVideoElement>(null);
+  const v6 = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     // Explicitly call load and play on all videos to bypass browser throttling of opacity-0 elements
-    [v1, v2, v3].forEach(v => {
+    [v1, v2, v3, v4, v5, v6].forEach(v => {
       if (v.current) {
         v.current.load();
         v.current.play().catch(() => {});
@@ -227,7 +237,7 @@ export function VideoBackground() {
   }, [path]);
 
   return (
-    <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden z-0 bg-background">
+    <div aria-hidden className={`pointer-events-none fixed inset-0 overflow-hidden z-0 ${(isAbout || isWhy || isContact) ? 'bg-black' : 'bg-background'}`}>
       <video
         ref={v1}
         src="/background-video.mp4"
@@ -235,7 +245,7 @@ export function VideoBackground() {
         loop
         muted
         playsInline
-        className={`absolute inset-0 h-full w-full object-cover z-10 transition-opacity duration-500 ${!isProducts && !isServices ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 h-full w-full object-cover z-10 transition-opacity duration-500 ${!isProducts && !isServices && !isAbout && !isWhy && !isContact ? "opacity-100" : "opacity-0"}`}
       />
       <video
         ref={v2}
@@ -255,10 +265,36 @@ export function VideoBackground() {
         playsInline
         className={`absolute inset-0 h-full w-full object-cover z-10 transition-opacity duration-500 ${isServices ? "opacity-100" : "opacity-0"}`}
       />
-      <div className="absolute inset-0 z-20 bg-black/20" />
+      <video
+        ref={v4}
+        src={companyJourneyVideo}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className={`absolute inset-0 h-full w-full object-cover z-20 transition-opacity duration-500 ${isAbout ? "opacity-100" : "opacity-0"}`}
+      />
+      <video
+        ref={v5}
+        src={teraitOfficeReveal}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className={`absolute inset-0 h-full w-full object-cover z-20 transition-opacity duration-500 ${isWhy ? "opacity-100" : "opacity-0"}`}
+      />
+      <video
+        ref={v6}
+        src={teraitContactVideo}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className={`absolute inset-0 h-full w-full object-cover z-20 transition-opacity duration-500 ${isContact ? "opacity-100" : "opacity-0"}`}
+      />
+      <div className={`absolute inset-0 z-20 bg-black/20 transition-opacity duration-500 ${(isHome || isAbout || isWhy || isContact) ? "opacity-0" : "opacity-100"}`} />
     </div>
   );
 }
-
 
 

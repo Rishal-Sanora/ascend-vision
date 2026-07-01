@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "@tanstack/react-router";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { SectionHeader } from "./Services";
 import { Wordmark } from "../Logo";
 import { triggerContactModal, ContactRow, Field } from "../ContactModal";
 
 /* ========== About ========== */
-export function About() {
+export function About({ isStandalone = false }: { isStandalone?: boolean } = {}) {
   const features = [
     { t: "Cloud Architecture", d: "Scalable, secure, and highly available environments.", i: "☁️" },
     { t: "DevOps & CI/CD", d: "Accelerated delivery pipelines and automation.", i: "🚀" },
@@ -14,14 +15,17 @@ export function About() {
   ];
   return (
     <section id="about" className="relative py-24 md:py-32 overflow-hidden">
-      {/* Ambient Spotlight: A huge, ultra-soft white glow behind the text. No hard edges, no blocks, just pure light. */}
-      <div className="absolute top-1/2 left-0 -translate-x-1/4 -translate-y-1/2 w-[1000px] h-[1000px] bg-white/50 blur-[140px] rounded-full pointer-events-none z-0" />
+      {/* Ambient Spotlight: Hide when standalone so it doesn't wash out the video background */}
+      {!isStandalone && (
+        <div className="absolute top-1/2 left-0 -translate-x-1/4 -translate-y-1/2 w-[1000px] h-[1000px] bg-white/50 blur-[140px] rounded-full pointer-events-none z-0" />
+      )}
       <div className="container-x grid lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
         <div>
           <SectionHeader
             kicker="About Terait"
             title="Empowering businesses through technical excellence"
             subtitle="Terait Technologies is a leading provider of comprehensive IT infrastructure and specialized surveillance solutions. We bridge complex technology with seamless business operations — from architecture to 24/7 managed care."
+            isWhite={isStandalone}
           />
           <motion.div
             className="grid sm:grid-cols-2 gap-4 mt-8"
@@ -130,7 +134,7 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
   );
 }
 
-export function WhyUs() {
+export function WhyUs({ isStandalone = false }: { isStandalone?: boolean } = {}) {
   const reasons = [
     {
       i: "🎓",
@@ -160,12 +164,15 @@ export function WhyUs() {
   ];
   return (
     <section id="why" className="relative py-24 md:py-32">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] bg-white/40 blur-[140px] rounded-full pointer-events-none z-0" />
+      {!isStandalone && (
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] bg-white/40 blur-[140px] rounded-full pointer-events-none z-0" />
+      )}
       <div className="container-x relative z-10">
         <SectionHeader
           kicker="Why Terait"
           title="The partner enterprises rely on"
           subtitle="We combine technical expertise with a relentless commitment to reliability — ensuring your IT is built for growth, scale and security."
+          isWhite={isStandalone}
         />
 
         <motion.div
@@ -461,13 +468,15 @@ export function FAQ() {
 }
 
 /* ========== Contact ========== */
-export function Contact() {
+export function Contact({ isStandalone = false }: { isStandalone?: boolean } = {}) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
   return (
     <section id="contact" className="relative py-24 md:py-32">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] bg-white/40 blur-[140px] rounded-full pointer-events-none z-0" />
+      {!isStandalone && (
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[800px] bg-white/40 blur-[140px] rounded-full pointer-events-none z-0" />
+      )}
       <div className="container-x max-w-5xl relative z-10">
         <div className="glass-strong rounded-2xl p-6 md:p-10 shadow-2xl">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-3 text-white">
@@ -481,12 +490,12 @@ export function Contact() {
           <div className="grid lg:grid-cols-2 gap-10">
             <div className="space-y-4">
               <ContactRow
-                icon="📍"
+                icon={<MapPin className="w-5 h-5" />}
                 label="Headquarters"
                 value="#24, 100 Feet Rd, HRBR Layout 1st Block, Banaswadi, Bengaluru, Karnataka 560043"
               />
               <ContactRow
-                icon="📞"
+                icon={<Phone className="w-5 h-5" />}
                 label="Phone"
                 value={
                   <>
@@ -501,7 +510,7 @@ export function Contact() {
                 }
               />
               <ContactRow
-                icon="✉️"
+                icon={<Mail className="w-5 h-5" />}
                 label="Email"
                 value={
                   <a
@@ -512,7 +521,7 @@ export function Contact() {
                   </a>
                 }
               />
-              <ContactRow icon="🕒" label="Working Hours" value="9:30 am to 6:30 pm" />
+              <ContactRow icon={<Clock className="w-5 h-5" />} label="Working Hours" value="Mon-Sat, 9:30 am to 6:30 pm" />
 
               <div className="mt-8 rounded-xl overflow-hidden h-[250px] border border-black/10">
                 <iframe
@@ -643,9 +652,15 @@ export function Footer() {
               Reach us
             </div>
             <ul className="space-y-1.5 text-white/80 font-semibold text-sm">
-              <li>+91 99645 46464</li>
-              <li>080 4336 4331</li>
-              <li>sales@teraittech.com</li>
+              <li>
+                <a href="tel:+919964546464" className="hover:text-brand-red transition-colors">+91 99645 46464</a>
+              </li>
+              <li>
+                <a href="tel:08043364331" className="hover:text-brand-red transition-colors">080 4336 4331</a>
+              </li>
+              <li>
+                <a href="mailto:sales@teraittech.com" className="hover:text-brand-red transition-colors">sales@teraittech.com</a>
+              </li>
               <li>Bengaluru, Karnataka</li>
             </ul>
           </div>
