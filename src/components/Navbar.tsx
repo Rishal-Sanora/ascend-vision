@@ -32,22 +32,14 @@ export function Navbar() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          scrolled ? "py-2 glass-nav border-b border-white/10" : "py-4"
-        }`}
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 py-4`}
       >
         <div className="container-x">
           <div className="flex items-center justify-between w-full py-3">
             <Link to="/" className="flex items-center" aria-label="Terait home">
               <Wordmark />
             </Link>
-            <nav
-              className={`hidden md:flex items-center gap-1 transition-all duration-500 ${
-                scrolled
-                  ? "glass-nav rounded-full px-4 py-1.5"
-                  : ""
-              }`}
-            >
+            <nav className="hidden md:flex items-center gap-1 transition-all duration-500">
               {links.map((l) => (
                 <Link
                   key={l.to}
