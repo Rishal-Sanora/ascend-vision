@@ -36,7 +36,7 @@ export function Hero() {
             }}
             className="relative z-10 flex flex-col items-center w-full"
           >
-            <h1 className="text-[clamp(2.5rem,10vw,8.5rem)] leading-[0.9] font-bold tracking-tighter mb-8 flex flex-col items-center min-h-[220px] justify-center text-center">
+            <h1 className="text-[clamp(2.5rem,10vw,8.5rem)] leading-[0.9] font-extrabold tracking-tighter mb-8 flex flex-col items-center min-h-[220px] justify-center text-center">
               <div className="flex gap-2 sm:gap-4 flex-wrap justify-center overflow-hidden">
                 <motion.span
                   variants={{
