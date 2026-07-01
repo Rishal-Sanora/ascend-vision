@@ -37,8 +37,8 @@ export function Hero() {
             }}
             className="relative z-10 flex flex-col items-center w-full"
           >
-            <h1 className="text-[clamp(3.5rem,10vw,8.5rem)] leading-[0.9] font-bold tracking-tighter mb-8 flex flex-col items-center drop-shadow-sm min-h-[220px] justify-center">
-              <div className="flex gap-4 flex-wrap justify-center overflow-hidden">
+            <h1 className="text-[clamp(2.5rem,10vw,8.5rem)] leading-[0.9] font-bold tracking-tighter mb-8 flex flex-col items-center drop-shadow-sm min-h-[220px] justify-center text-center">
+              <div className="flex gap-2 sm:gap-4 flex-wrap justify-center overflow-hidden">
                 <motion.span
                   variants={{
                     hidden: { opacity: 0, y: 50, filter: "blur(10px)" },
@@ -161,11 +161,11 @@ export function Hero() {
               tiltMaxAngleX={15}
               tiltMaxAngleY={15}
             >
-              <div className="bg-transparent p-5 md:p-6 rounded-3xl h-full cursor-default transition-transform hover:scale-105 border border-foreground/5 shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
-                <div className="text-3xl md:text-4xl font-display font-bold text-gradient drop-shadow-sm">
+              <div className="bg-transparent p-3 md:p-6 rounded-3xl h-full cursor-default transition-transform hover:scale-105 border border-foreground/5 shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-gradient drop-shadow-sm">
                   {n}
                 </div>
-                <div className="text-xs md:text-sm font-semibold text-white/90 mt-2">{l}</div>
+                <div className="text-[10px] sm:text-xs md:text-sm font-semibold text-white/90 mt-1 sm:mt-2">{l}</div>
               </div>
             </Tilt>
           ))}

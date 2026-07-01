@@ -25,8 +25,8 @@ export function ContactModal() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto p-0 border-none bg-transparent shadow-2xl glass-strong">
-        <div className="glass-strong rounded-xl p-6 md:p-8">
+      <DialogContent className="w-[95vw] sm:w-full max-w-4xl max-h-[90vh] overflow-y-auto p-0 border-none bg-transparent shadow-2xl glass-strong">
+        <div className="glass-strong rounded-xl p-4 sm:p-6 md:p-8">
           <DialogTitle className="text-2xl md:text-3xl font-display font-bold mb-2">
             Let's build your next infrastructure
           </DialogTitle>

@@ -153,10 +153,10 @@ function RootComponent() {
       </AnimatePresence>
 
       {/* Render background immediately, but wait for splash to finish to render the app */}
-      <main className="relative">
+      <main className="relative w-full overflow-x-hidden">
         <VideoBackground />
 
-        <div className="relative z-10 flex min-h-screen flex-col">
+        <div className="relative z-10 flex min-h-screen flex-col w-full">
           <Navbar />
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
           <div className="flex-1 flex flex-col relative w-full h-full">
