@@ -25,8 +25,8 @@ export function Hero() {
         </motion.div>
 
         <div className="relative w-full max-w-6xl mx-auto flex flex-col items-center">
-          {/* Ambient Glow Spotlight to ensure text contrast over video */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] md:w-[70%] h-[140%] bg-white/20 blur-[60px] rounded-[100%] pointer-events-none" />
+          {/* Ambient Dark Spotlight to ensure text contrast over bright videos */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] md:w-[80%] h-[150%] bg-black/60 blur-[80px] rounded-[100%] pointer-events-none" />
 
           <motion.div
             initial="hidden"

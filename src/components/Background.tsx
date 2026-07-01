@@ -227,14 +227,28 @@ export function VideoBackground() {
   const v6 = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Explicitly call load and play on all videos to bypass browser throttling of opacity-0 elements
-    [v1, v2, v3, v4, v5, v6].forEach(v => {
+    const videos = [
+      { v: v1, active: isHome },
+      { v: v2, active: isProducts },
+      { v: v3, active: isServices },
+      { v: v4, active: isAbout },
+      { v: v5, active: isWhy },
+      { v: v6, active: isContact },
+    ];
+
+    videos.forEach(({ v, active }) => {
       if (v.current) {
-        v.current.load();
-        v.current.play().catch(() => {});
+        if (active) {
+          v.current.play().catch(() => {});
+        } else {
+          // Pause inactive videos after the 500ms opacity transition to save CPU/GPU
+          setTimeout(() => {
+            if (v.current) v.current.pause();
+          }, 500);
+        }
       }
     });
-  }, [path]);
+  }, [isHome, isProducts, isServices, isAbout, isWhy, isContact]);
 
   return (
     <div aria-hidden className={`pointer-events-none fixed inset-0 overflow-hidden z-0 ${(isAbout || isWhy || isContact) ? 'bg-black' : 'bg-background'}`}>
