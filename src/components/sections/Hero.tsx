@@ -25,8 +25,7 @@ export function Hero() {
         </motion.div>
 
         <div className="relative w-full max-w-6xl mx-auto flex flex-col items-center">
-          {/* Ambient Dark Spotlight to ensure text contrast over bright videos */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] md:w-[80%] h-[150%] bg-black/60 blur-[80px] rounded-[100%] pointer-events-none" />
+          {/* Ambient Dark Spotlight removed as per user request to keep video bright */}
 
           <motion.div
             initial="hidden"
@@ -37,7 +36,7 @@ export function Hero() {
             }}
             className="relative z-10 flex flex-col items-center w-full"
           >
-            <h1 className="text-[clamp(2.5rem,10vw,8.5rem)] leading-[0.9] font-bold tracking-tighter mb-8 flex flex-col items-center drop-shadow-sm min-h-[220px] justify-center text-center">
+            <h1 className="text-[clamp(2.5rem,10vw,8.5rem)] leading-[0.9] font-bold tracking-tighter mb-8 flex flex-col items-center min-h-[220px] justify-center text-center">
               <div className="flex gap-2 sm:gap-4 flex-wrap justify-center overflow-hidden">
                 <motion.span
                   variants={{
@@ -91,7 +90,7 @@ export function Hero() {
                 hidden: { opacity: 0, y: 20 },
                 show: { opacity: 1, y: 0, transition: { duration: 1.2, delay: 0.8 } },
               }}
-              className="max-w-3xl text-lg md:text-2xl text-white font-semibold leading-relaxed drop-shadow-[0_2px_10px_rgba(255,255,255,1)] mt-4 px-4"
+              className="max-w-3xl text-lg md:text-2xl text-white font-semibold leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)] mt-4 px-4"
             >
               Enterprise networking, surveillance, cloud and cybersecurity — delivered end-to-end by
               certified engineers.{" "}
