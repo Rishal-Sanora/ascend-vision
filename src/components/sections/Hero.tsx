@@ -48,7 +48,7 @@ export function Hero() {
                       transition: { type: "spring", stiffness: 200, damping: 20 },
                     },
                   }}
-                  className="text-gradient inline-block"
+                  className="text-brand-red inline-block"
                 >
                   Secure.
                 </motion.span>
@@ -62,7 +62,7 @@ export function Hero() {
                       transition: { type: "spring", stiffness: 200, damping: 20 },
                     },
                   }}
-                  className="text-gradient inline-block"
+                  className="text-brand-red inline-block"
                 >
                   Smart.
                 </motion.span>
@@ -80,7 +80,7 @@ export function Hero() {
                 ]}
                 wrapper="span"
                 speed={10}
-                className="text-gradient-brand mt-1 inline-block drop-shadow-sm"
+                className="text-brand-red mt-1 inline-block drop-shadow-sm"
                 repeat={Infinity}
               />
             </h1>
