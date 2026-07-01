@@ -498,15 +498,15 @@ export function Contact({ isStandalone = false }: { isStandalone?: boolean } = {
                 icon={<Phone className="w-5 h-5" />}
                 label="Phone"
                 value={
-                  <>
-                    <a href="tel:+919964546464" className="hover:text-brand-blue font-medium transition-colors">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+                    <a href="tel:+919964546464" className="hover:text-brand-blue font-medium transition-colors whitespace-nowrap">
                       +91 99645 46464
                     </a>
-                    <span className="text-black/40 mx-2">·</span>
-                    <a href="tel:08043364331" className="hover:text-brand-blue font-medium transition-colors">
+                    <span className="hidden sm:inline text-black/40">·</span>
+                    <a href="tel:08043364331" className="hover:text-brand-blue font-medium transition-colors whitespace-nowrap">
                       080 4336 4331
                     </a>
-                  </>
+                  </div>
                 }
               />
               <ContactRow
