@@ -36,7 +36,7 @@ export function Hero() {
             }}
             className="relative z-10 flex flex-col items-center w-full"
           >
-            <h1 className="text-[clamp(2.5rem,10vw,8.5rem)] leading-[0.9] font-extrabold tracking-tighter mb-8 flex flex-col items-center min-h-[220px] justify-center text-center">
+            <h1 className="text-[clamp(2.5rem,10vw,8.5rem)] leading-[0.9] font-black tracking-tighter mb-8 flex flex-col items-center min-h-[220px] justify-center text-center">
               <div className="flex gap-2 sm:gap-4 flex-wrap justify-center overflow-hidden">
                 <motion.span
                   variants={{
@@ -48,7 +48,7 @@ export function Hero() {
                       transition: { type: "spring", stiffness: 200, damping: 20 },
                     },
                   }}
-                  className="text-brand-red inline-block"
+                  className="text-[#c8102e] inline-block"
                 >
                   Secure.
                 </motion.span>
@@ -62,7 +62,7 @@ export function Hero() {
                       transition: { type: "spring", stiffness: 200, damping: 20 },
                     },
                   }}
-                  className="text-brand-red inline-block"
+                  className="text-[#c8102e] inline-block"
                 >
                   Smart.
                 </motion.span>
@@ -80,7 +80,7 @@ export function Hero() {
                 ]}
                 wrapper="span"
                 speed={10}
-                className="text-brand-red mt-1 inline-block drop-shadow-sm"
+                className="text-[#c8102e] mt-1 inline-block drop-shadow-sm"
                 repeat={Infinity}
               />
             </h1>
@@ -94,7 +94,7 @@ export function Hero() {
             >
               Enterprise networking, surveillance, cloud and cybersecurity — delivered end-to-end by
               certified engineers.{" "}
-              <span className="font-bold text-brand-red">Terait Technology</span> bridges complex
+              <span className="font-bold text-[#c8102e]">Terait Technology</span> bridges complex
               infrastructure with seamless business operations.
             </motion.p>
           </motion.div>

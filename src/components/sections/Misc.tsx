@@ -276,7 +276,7 @@ export function Process() {
               className="relative glass gradient-border-glow rounded-2xl p-6 hover:shadow-xl hover:border-white/30 transition-all duration-300 group"
             >
               <div className="flex items-center justify-between">
-                <div className="text-xs font-mono text-white/70 font-bold group-hover:text-brand-blue transition-colors">
+                <div className="text-xs font-mono text-white/70 font-bold group-hover:text-[#c8102e] transition-colors">
                   STEP {s.n}
                 </div>
                 <div className="h-8 w-8 rounded-full bg-gradient-to-br from-[var(--brand-red)] to-[var(--brand-blue)] text-white grid place-items-center text-sm font-bold drop-shadow-sm group-hover:shadow-glow-blue transition-shadow">
@@ -503,14 +503,14 @@ export function Contact({ isStandalone = false }: { isStandalone?: boolean } = {
                   <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
                     <a
                       href="tel:+919964546464"
-                      className="hover:text-brand-blue font-medium transition-colors whitespace-nowrap"
+                      className="hover:text-[#c8102e] font-medium transition-colors whitespace-nowrap"
                     >
                       +91 99645 46464
                     </a>
                     <span className="hidden sm:inline text-black/40">·</span>
                     <a
                       href="tel:08043364331"
-                      className="hover:text-brand-blue font-medium transition-colors whitespace-nowrap"
+                      className="hover:text-[#c8102e] font-medium transition-colors whitespace-nowrap"
                     >
                       080 4336 4331
                     </a>
@@ -523,7 +523,7 @@ export function Contact({ isStandalone = false }: { isStandalone?: boolean } = {
                 value={
                   <a
                     href="mailto:sales@teraittech.com"
-                    className="hover:text-brand-blue font-medium transition-colors"
+                    className="hover:text-[#c8102e] font-medium transition-colors"
                   >
                     sales@teraittech.com
                   </a>

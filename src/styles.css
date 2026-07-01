@@ -153,14 +153,14 @@
 }
 
 @utility text-gradient {
-  color: var(--brand-blue);
+  color: #c8102e;
   text-shadow: none !important;
 }
 
 /* Dark theme override removed for light theme */
 
 @utility text-gradient-brand {
-  color: var(--brand-blue);
+  color: #c8102e;
   text-shadow: none !important;
 }
 
