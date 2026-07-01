@@ -127,7 +127,7 @@ function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
     return () => io.disconnect();
   }, [to]);
   return (
-    <div ref={ref} className="text-4xl md:text-5xl font-display font-bold text-gradient">
+    <div ref={ref} className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gradient">
       {n}
       {suffix}
     </div>
@@ -198,10 +198,10 @@ export function WhyUs({ isStandalone = false }: { isStandalone?: boolean } = {})
                 show: { opacity: 1, scale: 1, transition: { type: "spring" } },
               }}
               whileHover={{ y: -4, scale: 1.02 }}
-              className="glass gradient-border-glow rounded-2xl p-5 md:p-6 cursor-default hover:shadow-glow-blue transition-all"
+              className="glass gradient-border-glow rounded-2xl p-3 sm:p-5 md:p-6 cursor-default hover:shadow-glow-blue transition-all"
             >
               <Counter to={s.n} suffix={s.s} />
-              <div className="mt-1 text-sm text-white/80 font-semibold">{s.l}</div>
+              <div className="mt-1 text-xs sm:text-sm text-white/80 font-semibold">{s.l}</div>
             </motion.div>
           ))}
         </motion.div>
