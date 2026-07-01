@@ -293,7 +293,7 @@ export function VideoBackground() {
         loop
         muted
         playsInline
-        className={`absolute inset-0 h-[100svh] w-full object-cover z-20 transition-opacity duration-500 ${isAbout ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 h-[100svh] w-full object-contain z-20 transition-opacity duration-500 ${isAbout ? "opacity-100" : "opacity-0"}`}
       />
       <video
         ref={v5}
