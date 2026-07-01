@@ -259,7 +259,7 @@ export function VideoBackground() {
         loop
         muted
         playsInline
-        className={`absolute inset-0 h-full w-full object-cover z-10 transition-opacity duration-500 ${!isProducts && !isServices && !isAbout && !isWhy && !isContact ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 h-[100svh] w-full object-contain lg:object-cover z-10 transition-opacity duration-500 ${!isProducts && !isServices && !isAbout && !isWhy && !isContact ? "opacity-100" : "opacity-0"}`}
       />
       <video
         ref={v2}
@@ -268,7 +268,7 @@ export function VideoBackground() {
         loop
         muted
         playsInline
-        className={`absolute inset-0 h-full w-full object-cover z-10 transition-opacity duration-500 ${isProducts ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 h-[100svh] w-full object-contain lg:object-cover z-10 transition-opacity duration-500 ${isProducts ? "opacity-100" : "opacity-0"}`}
       />
       <video
         ref={v3}
@@ -277,7 +277,7 @@ export function VideoBackground() {
         loop
         muted
         playsInline
-        className={`absolute inset-0 h-full w-full object-cover z-10 transition-opacity duration-500 ${isServices ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 h-[100svh] w-full object-contain lg:object-cover z-10 transition-opacity duration-500 ${isServices ? "opacity-100" : "opacity-0"}`}
       />
       <video
         ref={v4}
@@ -286,7 +286,7 @@ export function VideoBackground() {
         loop
         muted
         playsInline
-        className={`absolute inset-0 h-full w-full object-cover z-20 transition-opacity duration-500 ${isAbout ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 h-[100svh] w-full object-contain lg:object-cover z-20 transition-opacity duration-500 ${isAbout ? "opacity-100" : "opacity-0"}`}
       />
       <video
         ref={v5}
@@ -295,7 +295,7 @@ export function VideoBackground() {
         loop
         muted
         playsInline
-        className={`absolute inset-0 h-full w-full object-cover z-20 transition-opacity duration-500 ${isWhy ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 h-[100svh] w-full object-contain lg:object-cover z-20 transition-opacity duration-500 ${isWhy ? "opacity-100" : "opacity-0"}`}
       />
       <video
         ref={v6}
@@ -304,7 +304,7 @@ export function VideoBackground() {
         loop
         muted
         playsInline
-        className={`absolute inset-0 h-full w-full object-cover z-20 transition-opacity duration-500 ${isContact ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 h-[100svh] w-full object-contain lg:object-cover z-20 transition-opacity duration-500 ${isContact ? "opacity-100" : "opacity-0"}`}
       />
       <div className={`absolute inset-0 z-20 bg-black/20 transition-opacity duration-500 ${(isHome || isAbout || isWhy || isContact) ? "opacity-0" : "opacity-100"}`} />
     </div>
